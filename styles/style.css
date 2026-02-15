@@ -13,4 +13,167 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--font-main-Inter, 'Inter'), sans-serif;
+  font-variation-settings: "wght" var(--card-text-weight, 410);
+  font-size: var(--page-main-font-size, 18px);
+  background: var(--stripes-gradient-to-right, repeating-linear-gradient(
+        to right,
+        #d3d3d3 0px,
+        #d3d3d3 2px,
+        transparent 2px,
+        transparent 4px
+    )
+    ), var(--stripes-gradient-to-bottom, repeating-linear-gradient(
+        to bottom,
+        #d3d3d3 0px,
+        #d3d3d3 2px,
+        transparent 2px,
+        transparent 4px
+    )
+    ), var(--stripes-gradient-evenly-color, repeating-linear-gradient(
+        to bottom,
+        #e7e7e7 0%,
+        #e7e7e7 0.01%, 
+        #1a1a1a 100%
+    )
+    );
+  background-size: cover; /* Растягиваем на всю страницу */
+  background-attachment: fixed; /* чтобы зафиксировать фон на месте при прокрутке */
+  min-block-size: 667px;
+}
+
+/* header */
+
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+.zakrivayuschiy-teg {
+  /* inline-size: 100%; */
+  /* max-inline-size: var(--max-inline-size, 700px); */
+  display: flex;
+  place-items: center; /* одновременно и justify-content и align-items */
+  gap: 20px;
+  flex-direction: column;
+  margin-block-start: var(--margin-block-start, 100px);
+  margin-block-end: var(--margin-block-end, clamp(100px, 28vw, 492px));
+  padding-block-start: var(--padding-block-start, clamp(122px, 12vw, 130px));
+  padding-block-end: var(--padding-block-end, clamp(122px, 12vw, 130px));
+  /* TODO: и подгони низний отступ под макет сделав его меньше */
+}
+
+.main {
+  display: flex;
+  gap: var(--main-gap, 50px);
+  justify-content: center;
+
+  /* TODO: сделай ратягивающиеся блоки при помрщи clemp */
+}
+
+/* post */
+
+.post__title {
+  font-family: var(--font-main-Inter, 'Inter'), sans-serif;
+  font-variation-settings: "wght" var(--page-title-weight, 715);
+  font-size: inherit;
+}
+
+.post__block-content-text {
+  font-variation-settings: "wght" var(--page-text-weight, 410);
+}
+
+.post__image {
+  inline-size: 100%;
+  aspect-ratio: 1 / 1; /* квадратное */
+  display: block; /* Убирает лишние пробелы под изображением */
+  object-fit: cover; /* Аналогично background-size: cover */
+  object-position: center; /* Аналогично background-position: center */
+}
+
+.post__block-content {
+  display: flex;
+  gap: 25px;
+  flex-direction: column;
+  margin-inline: var(--margin-post__block-content, 25px);
+  margin-block: var(--margin-post__block-content, 25px);
+}
+
+.post__artile {
+  position: relative;
+}
+
+.post__artile .label-html {
+  font-size: var(--font-size-label, 14px);
+  display: block;
+  position: absolute;
+  -webkit-text-stroke: 1px var(--label-stroke-color, rgba(255, 255, 255, 0.5)); /* обводка текста */
+  -moz-text-stroke: 1px var(--label-stroke-color, rgba(255, 255, 255, 0.5)); /* Firefox  */
+  -o-text-stroke: 1px var(--label-stroke-color, rgba(255, 255, 255, 0.5)); /* для старой оперы */
+  mix-blend-mode: hard-light; /* Режим смешивания */
+  white-space: nowrap;
+  margin-inline-start: var(--label-margin-inline-start, 71%);
+  margin-block-start: var(--label-margin-block-start, 4%);
+}
+
+.animation-buttons {
+  display: flex;
+  justify-content: end;
+  gap: 12px;
+}
+
+/* footer */
+
+.footer {
+  display: flex;
+  justify-content: center;
+}
+
+.save-button {
+  padding-block: clamp(17px, 2.5vw, 20.5px);  /* от 17px до 20.5px */
+  padding-inline: 20px;                        /* фиксированные 20px */
+}
+
+/* универсальные стили */
+
+.max-width-block {
+  inline-size: var(--inline-size, clamp(375px, 80vw, 700px));
+}
+
+.pixele-title {
+  font-family: var(--accent-font-PressStart2P-Regular, 'Press Start 2P'), sans-serif;
+}
+
+.zakrivayuschiy-teg__html {
+  font-size: var(--font-size-html-title, clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem));
+}
+
+.zakrivayuschiy-teg__title {
+  font-size: var(--font-size-zakrivayuschiy-teg-title, clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem));
+}
+
+.black-border {
+  border: 2px solid var(--black-border, #000);
+  background: #fff;
+}
+
+/* прогрессивное улучшение */
+
+@supports (text-stroke: 1px var(--label-stroke-color, rgba(255, 255, 255, 0.5))) {
+  .post__artile .label-html {
+  text-stroke: 1px var(--label-stroke-color, rgba(255, 255, 255, 0.5));
+  }
+}
+
+/* адаптив */
+
+@media (width >= 1440px) {
+    .page {
+    /* display: flex;
+    justify-content: center; */
+    min-block-size: 960px;
+  }
+  /* .zakrivayuschiy-teg TODO: ненужное свойство удалить {
+    margin-block-start: var(--margin-block-start, 100px); 
+  } */
 }

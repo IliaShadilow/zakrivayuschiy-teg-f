@@ -4,6 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Закрывающий тег</title>
+    <!-- тип image/x-icon для icon  -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      sizes="32x32"
+      href="/images/favicon.ico"
+    />
+    <!-- тип image/svg+xml для svg  -->
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+    <!--  rel для apple-touch-ico для png  -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/mobile-icon.png"
+      />
     <link rel="stylesheet" href="./fonts/fonts.css" />
     <link rel="stylesheet" href="./styles/variables.css" />
     <link rel="stylesheet" href="./styles/globals.css" />
@@ -11,8 +26,53 @@
     <link rel="stylesheet" href="./styles/animations.css" />
   </head>
   <body class="page">
-    <header class="header"></header>
-    <main></main>
+    <header class="header">
+      <div class="zakrivayuschiy-teg black-border max-width-block">
+        <h1 class="pixele-title zakrivayuschiy-teg__html">&lt;/HTML&gt;</h1>
+        <h2 class="pixele-title zakrivayuschiy-teg__title">закрывающий тег</h2>
+      </div>
+    </header>
+    <main class="main">
+      <section class="post max-width-block">
+        <article class="post__artile black-border"> <!-- посомтреть будет ли тут использоваться класс пост или нет -->
+          <h2 class="post__title title-bold">Фритрек и нулевой спринт: Подготовка к работе</h2>
+          <h3 class="pixele-title zakrivayuschiy-teg__html label-html" aria-hidden="true">&lt;/HTML&gt;</h3>
+          <img
+          src="./images/bus.png"
+          alt="пиксельный фургон стоит под ночным небом"
+          class="post__image"/>
+          <div class="post__block-content">
+          <p class="post__block-content-text">Это было самое начало пути. На этом этапе важно было проникнуться основами и настроиться на учёбу. И, возможно, подумать, как новые знания могут повлиять на ваше будущее.</p>
+          <p class="post__text-content-text">Место для ваших воспоминаний о начале обучения.</p>
+          <div class="animation-buttons">
+          <button type="button" class="card__icon-button" aria-label="Like">
+          <svg class="like-icon" xmlns="http://www.w3.org/2000/svg" width="27" height="24" fill="none" viewBox="0 0 27 24"><path fill="#000" d="M6 0H3v3h3zM9 0H6v3h3zM3 3H0v3h3zM3 6H0v3h3zM3 9H0v3h3zM12 0H9v3h3zM6 12H3v3h3zM9 15H6v3h3zM12 18H9v3h3zM21 0h3v3h-3zM18 0h3v3h-3zM24 3h3v3h-3zM24 6h3v3h-3zM24 9h3v3h-3zM15 0h3v3h-3zM21 12h3v3h-3zM18 15h3v3h-3zM15 18h3v3h-3zM15 3h-3v3h3zM15 21h-3v3h3z"/></svg>
+        </button>
+          <button type="button" class="card__like-button">
+            <span class="button__text">Like</span>
+          </button>
+          </div>
+          </div>
+
+        
+        <!-- loading="lazy" - для ленивой загрузки и ускорения гукрузки страницы -->
+        </article>
+      </section><!-- TODO: сдеать линивую подзрузку на картики кроме первого блока -->
+    </main>
+    <footer class="footer">
+  <!-- Кнопка "Сохранить на память" -->
+  <button type="button" class="save-button black-border">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 38 38">
+              <use href="./svg/icons.svg#floppy"></use>
+    </svg>
+    <span class="button__text">Сохранить на память</span>
+  </button>
+  
+  <!-- Кнопка "ОК" (например, в модальном окне) -->
+  <button type="button" class="ok-button">
+    <span class="button__text">ОК</span>
+  </button>
+</footer>
     <script src="./scripts/like.js"></script>
   </body>
 </html>
