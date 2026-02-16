@@ -8,6 +8,7 @@
     --page-title-weight: 715;
     --page-bold-title-weight: 900;
     --page-main-font-size: 18px;
+    --font-size-button__text: 14px;
     --font-size-html-title: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
     --font-size-zakrivayuschiy-teg-title: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
     /*background-gradient*/
@@ -39,13 +40,17 @@
     --max-inline-size: 700px;
 
 
-    /* --main-gap */
+    /* --main */
     --main-gap: 50px;
     --margin-post__block-content: 25px;
+    --margin-block-end: 50px;
     --font-size-label: 14px;
     --label-stroke-color: rgba(255, 255, 255, 0.5);
-    --label-margin-inline-start: 71%;
+    --label-margin-inline-start: 64%;
     --label-margin-block-start: 4%;
+    --margin-inline-post__title-content: 10px;
+    --margin-block-post__title-content: 4px;
+    --bg-post__image: #000;
 
 
 

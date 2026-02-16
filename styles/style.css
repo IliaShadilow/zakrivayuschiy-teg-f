@@ -77,6 +77,8 @@
   font-family: var(--font-main-Inter, 'Inter'), sans-serif;
   font-variation-settings: "wght" var(--page-title-weight, 715);
   font-size: inherit;
+  margin-inline: var(--margin-inline-post__title-content, 10px);
+  margin-block: var(--margin-block-post__title-content, 4px);
 }
 
 .post__block-content-text {
@@ -89,6 +91,7 @@
   display: block; /* Убирает лишние пробелы под изображением */
   object-fit: cover; /* Аналогично background-size: cover */
   object-position: center; /* Аналогично background-position: center */
+  background: var(--bg-post__image, #000);
 }
 
 .post__block-content {
@@ -101,6 +104,7 @@
 
 .post__artile {
   position: relative;
+  margin-block-end: var(--margin-block-end, 50px);
 }
 
 .post__artile .label-html {
@@ -112,14 +116,32 @@
   -o-text-stroke: 1px var(--label-stroke-color, rgba(255, 255, 255, 0.5)); /* для старой оперы */
   mix-blend-mode: hard-light; /* Режим смешивания */
   white-space: nowrap;
-  margin-inline-start: var(--label-margin-inline-start, 71%);
+  margin-inline-start: var(--label-margin-inline-start, 64%);
   margin-block-start: var(--label-margin-block-start, 4%);
 }
+
+/* animation-buttons */
 
 .animation-buttons {
   display: flex;
   justify-content: end;
   gap: 12px;
+}
+
+.card__like-button {
+  padding-inline: 37px;
+  padding-block: 12.5px;
+}
+
+.save-button {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  gap: 8px;
+}
+
+.button__text {
+  font-size: var(--font-size-button__text, 14px);
 }
 
 /* footer */
@@ -167,7 +189,7 @@
 
 /* адаптив */
 
-@media (width >= 1440px) {
+@media (width >= 1024px) {
     .page {
     /* display: flex;
     justify-content: center; */
