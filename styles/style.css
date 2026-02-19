@@ -130,7 +130,7 @@
 
 .card__like-button {
   padding-inline: 37px;
-  padding-block: 12.5px;
+  padding-block: var(--padding-block-buttons, 12.5px); 
 }
 
 .save-button {
@@ -149,12 +149,53 @@
 .footer {
   display: flex;
   justify-content: center;
+  margin-block-end: var(--footer-margin-block-end, clamp(3.125rem, 8.333rem - 4vw, 6.25rem));
 }
 
 .save-button {
   padding-block: clamp(17px, 2.5vw, 20.5px);  /* от 17px до 20.5px */
   padding-inline: 20px;                        /* фиксированные 20px */
 }
+
+/* dialog */
+
+.dialog {
+  display: flex;
+  place-items: center;
+  flex-direction: column;
+  inline-size: var(--dialog-inline-size, clamp(21.3125rem, 21rem + 2vw, 22.0625rem));
+  min-block-size: var(--dialog-min-block-size, 191px);
+  padding-block: var(--dialog-padding-block, clamp(1.875rem, 1.25rem + 2vw, 1.875rem));
+  padding-inline: var(--dialog-padding-inline, clamp(2.5rem, 1.25rem + 5vw, 2.5rem));
+  justify-content: space-between;
+  position: fixed; /* центрирование */
+  inset: 0; /* центрирование */
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Состояние, когда диалог скрыт (без атрибута open) */
+.dialog:not([open]) {
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* Стилизация фона (backdrop) */
+.dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+}
+
+.dialog__content {
+  display: flex;
+  gap: 20px;
+}
+
+.ok-button {
+  inline-size: 100%;
+  padding-block: var(--padding-block-buttons, 12.5px);
+}
+
+/* position's labels and filters img */
 
 /* универсальные стили */
 
@@ -164,6 +205,7 @@
 
 .pixele-title {
   font-family: var(--accent-font-PressStart2P-Regular, 'Press Start 2P'), sans-serif;
+  line-height: 1.5;
 }
 
 .zakrivayuschiy-teg__html {
@@ -191,11 +233,9 @@
 
 @media (width >= 1024px) {
     .page {
-    /* display: flex;
-    justify-content: center; */
     min-block-size: 960px;
   }
-  /* .zakrivayuschiy-teg TODO: ненужное свойство удалить {
+  /* .zakrivayuschiy-teg TODO: все фильтры и позишен лейблов {
     margin-block-start: var(--margin-block-start, 100px); 
   } */
 }
