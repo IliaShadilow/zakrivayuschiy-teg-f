@@ -116,8 +116,9 @@
   -o-text-stroke: 1px var(--label-stroke-color, rgba(255, 255, 255, 0.5)); /* для старой оперы */
   mix-blend-mode: hard-light; /* Режим смешивания */
   white-space: nowrap;
-  margin-inline-start: var(--label-margin-inline-start, 64%);
+  margin-inline-start: var(--label-margin-inline-start, 71%);
   margin-block-start: var(--label-margin-block-start, 4%);
+  z-index: 20;
 }
 
 /* animation-buttons */
@@ -171,6 +172,7 @@
   position: fixed; /* центрирование */
   inset: 0; /* центрирование */
   transition: opacity 0.3s ease-in-out;
+  gap: 30px;
 }
 
 /* Состояние, когда диалог скрыт (без атрибута open) */
@@ -179,10 +181,16 @@
   opacity: 0;
 }
 
+
+/* Чтобы не прокручивать страницу при открытом модальном окне */
+body:has(dialog[open]) {
+  overflow: hidden;
+}
+
 /* Стилизация фона (backdrop) */
 .dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(4px);
+  background-color: rgba(0, 0, 0, 0.75); /* TODO: сделай как в макете */
+  backdrop-filter: blur(3px);
 }
 
 .dialog__content {
@@ -197,6 +205,83 @@
 
 /* position's labels and filters img */
 
+/* knight */
+
+.post__artile .label-html-knight {
+  margin-inline-start: 65%;
+  margin-block-start: 3%;
+}
+
+.post__image-knight {
+  filter: sepia(77%) brightness(62%);
+}
+
+/* boy-smoking */
+
+.post__artile .label-html-boy-smoking {
+  margin-inline-start: 60%;
+  margin-block-start: 4%;
+}
+
+.post__image-boy-smoking {
+  filter: saturate(50%) grayscale(100%);
+}
+
+/* coders */
+
+.post__artile .label-html-coders {
+  margin-inline-start: 63%;
+  margin-block-start: 2%;
+}
+
+.post__image-coders {
+  filter: hue-rotate(160deg) drop-shadow(18px 18px 10px #51b124);
+}
+
+/* simpsons-hug */
+
+.post__artile .label-html-simpsons-hug {
+  margin-inline-start: 52%;
+  margin-block-start: 3%;
+}
+
+.post__image-simpsons-hug {
+  filter: saturate(160%) blur(3px);
+}
+
+/* boy-in-meadow */
+
+.post__artile .label-html-boy-in-meadow {
+  margin-inline-start: 53%;
+  margin-block-start: 6%;
+}
+
+.post__image-boy-in-meadow {
+  filter: opacity(111%) contrast(0.7);
+}
+
+/* river */
+
+.post__artile .label-html-river {
+  margin-inline-start: 68%;
+  margin-block-start: 3%;
+}
+
+.post__image-river {
+  filter: opacity(90%) brightness(63%);
+}
+
+/* thumbs-up */
+
+.post__artile .label-html-thumbs-up {
+  margin-inline-start: 68%;
+  margin-block-start: 3%;
+}
+
+.post__image-thumbs-up {
+  filter: saturate(175%);
+}
+
 /* универсальные стили */
 
 .max-width-block {
@@ -206,6 +291,7 @@
 .pixele-title {
   font-family: var(--accent-font-PressStart2P-Regular, 'Press Start 2P'), sans-serif;
   line-height: 1.5;
+  word-spacing: -11px;
 }
 
 .zakrivayuschiy-teg__html {
