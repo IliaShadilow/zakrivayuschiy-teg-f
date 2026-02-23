@@ -43,6 +43,12 @@ button {
   cursor: pointer;
 }
 
+button:focus,
+button:focus-visible {
+  outline: none;
+  border: 2px solid var(--border-button-focus, rgba(0, 0, 0, 1));
+}
+
 ul,
 ol {
   list-style: none;

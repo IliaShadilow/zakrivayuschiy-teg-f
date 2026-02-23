@@ -47,8 +47,6 @@
     --margin-block-end: 50px;
     --font-size-label: 14px;
     --label-stroke-color: rgba(255, 255, 255, 0.5);
-    --label-margin-inline-start: 71%;
-    --label-margin-block-start: 4%;
     --margin-inline-post__title-content: 10px;
     --margin-block-post__title-content: 4px;
     --bg-post__image: #000;
@@ -66,5 +64,11 @@
     --black-border: #000;
     --inline-size: clamp(375px, 80vw, 700px);
     --padding-block-buttons: 12.5px;
+    --border-button-focus: rgba(0, 0, 0, 1);
 
+    /* Переменные для кнопок со смешиванием */
+    --button-bg-default: #fff;
+    --button-text-default: #000;
+    --button-fill-color: #000;
+    --button-text-hover: #fff; /* Белый текст на черном фоне */
 }

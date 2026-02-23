@@ -116,8 +116,8 @@
   -o-text-stroke: 1px var(--label-stroke-color, rgba(255, 255, 255, 0.5)); /* для старой оперы */
   mix-blend-mode: hard-light; /* Режим смешивания */
   white-space: nowrap;
-  margin-inline-start: var(--label-margin-inline-start, 71%);
-  margin-block-start: var(--label-margin-block-start, 4%);
+  margin-inline-start: 71%;
+  margin-block-start: 4%;
   z-index: 20;
 }
 
@@ -143,6 +143,37 @@
 
 .button__text {
   font-size: var(--font-size-button__text, 14px);
+}
+
+/* focus and hover buttons */
+
+.post .black-border:focus-visible,
+.footer .black-border:focus-visible,
+.dialog .black-border:focus-visible {
+  box-shadow: 2px 2px 0 0 var(--border-button-focus, rgba(0, 0, 0, 1));
+  transition: box-shadow 0.3s ease;
+}
+
+.post .card__like-button::after,
+.footer .save-button::after,
+.dialog .ok-button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 100%; 
+  background-color: var(--border-button-focus, #000); 
+  z-index: -1; /* Отправляем фон под текст */
+  transform: scaleX(0);/* Начальное состояние: сплющен по ширине (0%) или transform: translateX(-100%);*/
+  transform-origin: left; /* Точка трансформации — левый край */
+  transition: transform 0.5s ease-in-out; /* Плавность заполнения */
+}
+
+.post .card__like-button:hover::after,
+.footer .save-button:hover::after,
+.dialog .ok-button:hover::after {
+  transform: scaleX(1); /* растягиваем на 100% ширины или or transform: translateX(0); */
 }
 
 /* footer */
@@ -189,7 +220,7 @@ body:has(dialog[open]) {
 
 /* Стилизация фона (backdrop) */
 .dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.75); /* TODO: сделай как в макете */
+  background-color: rgba(0, 0, 0, 0.75); 
   backdrop-filter: blur(3px);
 }
 
@@ -305,6 +336,8 @@ body:has(dialog[open]) {
 .black-border {
   border: 2px solid var(--black-border, #000);
   background: #fff;
+  position: relative;
+  z-index: 1; /* Чтобы текст был выше псевдоэлемента */
 }
 
 /* прогрессивное улучшение */
@@ -321,7 +354,57 @@ body:has(dialog[open]) {
     .page {
     min-block-size: 960px;
   }
-  /* .zakrivayuschiy-teg TODO: все фильтры и позишен лейблов {
-    margin-block-start: var(--margin-block-start, 100px); 
-  } */
+
+  /* position's labels and filters img */
+
+  .post__artile .label-html {
+    margin-inline-start: 83%;
+    margin-block-start: 3%;
+  }
+
+  /* knight */
+
+  .post__artile .label-html-knight {
+    margin-inline-start: 80%;
+  }
+
+  /* boy-smoking */
+
+  .post__artile .label-html-boy-smoking {
+    margin-inline-start: 77%;
+    margin-block-start: 3%;
+  }
+
+  /* coders */
+
+  .post__artile .label-html-coders {
+    margin-inline-start: 79%;
+    margin-block-start: 3%;
+  }
+
+  /* simpsons-hug */
+
+  .post__artile .label-html-simpsons-hug {
+    margin-inline-start: 73%;
+  }
+
+  /* boy-in-meadow */
+
+  .post__artile .label-html-boy-in-meadow {
+    margin-inline-start: 73%;
+    margin-block-start: 6%;
+  }
+
+  /* river */
+
+  .post__artile .label-html-river {
+    margin-inline-start: 80%;
+  }
+
+  /* thumbs-up */
+
+  .post__artile .label-html-thumbs-up {
+    margin-inline-start: 81%;
+  }
+  
 }
