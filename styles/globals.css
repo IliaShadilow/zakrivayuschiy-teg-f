@@ -43,10 +43,8 @@ button {
   cursor: pointer;
 }
 
-button:focus,
-button:focus-visible {
+button:focus {
   outline: none;
-  border: 2px solid var(--border-button-focus, rgba(0, 0, 0, 1));
 }
 
 ul,

@@ -66,9 +66,13 @@
     --padding-block-buttons: 12.5px;
     --border-button-focus: rgba(0, 0, 0, 1);
 
-    /* Переменные для кнопок со смешиванием */
-    --button-bg-default: #fff;
-    --button-text-default: #000;
-    --button-fill-color: #000;
-    --button-text-hover: #fff; /* Белый текст на черном фоне */
+     --button-text-mix: #fff; /* белый для смешивания */
+     --loppy-fill-white: #fff;
+
+    /* анимация цвета */
+    --color-contour: #000;
+    --animation-fill-color-core: red;
+    --sparks-color: red;
+    --main-body-color-black: #000;
+    --core-color-black: #000;
 }

@@ -42,6 +42,11 @@
   min-block-size: 667px;
 }
 
+.page::selection {
+  background-color: pink; /* поменять цвет выделения текста */
+  color: white;
+}
+
 /* header */
 
 .header {
@@ -50,8 +55,6 @@
 }
 
 .zakrivayuschiy-teg {
-  /* inline-size: 100%; */
-  /* max-inline-size: var(--max-inline-size, 700px); */
   display: flex;
   place-items: center; /* одновременно и justify-content и align-items */
   gap: 20px;
@@ -60,15 +63,12 @@
   margin-block-end: var(--margin-block-end, clamp(100px, 28vw, 492px));
   padding-block-start: var(--padding-block-start, clamp(122px, 12vw, 130px));
   padding-block-end: var(--padding-block-end, clamp(122px, 12vw, 130px));
-  /* TODO: и подгони низний отступ под макет сделав его меньше */
 }
 
 .main {
   display: flex;
   gap: var(--main-gap, 50px);
   justify-content: center;
-
-  /* TODO: сделай ратягивающиеся блоки при помрщи clemp */
 }
 
 /* post */
@@ -143,6 +143,18 @@
 
 .button__text {
   font-size: var(--font-size-button__text, 14px);
+  /* Измменение цвета при наведении */
+  color: var(--button-text-mix); /* белый */
+  mix-blend-mode: difference;
+  position: relative;
+  z-index: 1; /* выше псевдоэлемента с z-index: -1 */
+}
+
+/* Иконка дискеты в кнопке "Сохранить на память" */
+.save-button .save-button__floppy-icon {
+  mix-blend-mode: difference;
+  fill: var(--loppy-fill-white, #fff);
+  /* Если иконка не позиционирована, она останется в потоке */
 }
 
 /* focus and hover buttons */
@@ -174,6 +186,98 @@
 .footer .save-button:hover::after,
 .dialog .ok-button:hover::after {
   transform: scaleX(1); /* растягиваем на 100% ширины или or transform: translateX(0); */
+}
+
+.card__icon-button {
+  border: 2px solid transparent;        /* прозрачная рамка для сохранения размера как в задании */
+  transition: border-color 0.3s ease;   /* плавность при изменении цвета */
+}
+
+.post .card__icon-button:focus-visible {
+  border: 2px solid var(--border-button-focus, rgba(0, 0, 0, 1));
+}
+
+/* Анимация сердца */
+
+/* анимация всего сердца */
+
+.like-icon.is-liked .core {
+  opacity: 1;
+  fill: var(--animation-fill-color-core, red);
+  transition: none;
+}
+
+.like-icon.is-liked .main-body { 
+  transition: opacity 0.3s linear 0.05s, fill 0.3s linear 0.05s;
+  opacity: 1;
+  fill: var(--animation-fill-color-core, red);
+}
+
+.like-icon.is-liked .contour { 
+  transition: fill 0.3s linear 0.06s;
+  fill: var(--animation-fill-color-core, red);
+}
+
+/* увеличить всё сердце и добавляет искры */
+
+.like-icon.is-liked .heart {
+  transform-origin: center;
+  animation: heart-pulse 0.3s ease-in 0.1s 1;
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks-flash 0.3s ease-in 0.3s 1; /* Вспышка */
+}
+
+/* core — сердцевина */
+
+.core {
+  transition: opacity 0.3s linear 0.03s; /*transition: opacity 0.3s linear 0.03s, fill 0.3s linear;*/
+  opacity: 0;
+  fill: var(--core-color-black, #000);
+}
+
+.like-icon:hover .core { /* так это выглядит Для стилизации вам понадобится отслеживать наведение на основной обёртке (.like-icon), а после — выбирать нужный элемент. */
+  transition: opacity 0.3s linear, fill 0.3s linear;
+  opacity: 1;
+  fill: var(--core-color-black, #000);
+}
+
+.like-icon:active .core { /* так это выглядит Для стилизации вам понадобится отслеживать наведение на основной обёртке (.like-icon), а после — выбирать нужный элемент. */
+  transition: opacity 0.3s linear, fill 0.3s linear;
+  opacity: 1;
+  fill: var(--animation-fill-color-core, red);
+}
+
+/* contour — контур */
+
+.contour {
+  transition: fill 0.1s linear; 
+}
+
+/* main-body — основное тело сердца; */
+
+.main-body {
+  opacity: 0;
+  transition: opacity 0.3s linear, fill 0.3s linear;
+}
+
+.like-icon:hover .main-body { /* так это выглядит Для стилизации вам понадобится отслеживать наведение на основной обёртке (.like-icon), а после — выбирать нужный элемент. */
+  transition: opacity 0.3s linear 0.05s, fill 0.3s linear 0.05s;
+  opacity: 1;
+  fill: var(--main-body-color-black, #000);
+}
+
+.like-icon:active .main-body { 
+  transition: opacity 0.3s linear 0.05s, fill 0.3s linear 0.05s;
+  opacity: 1;
+  fill: var(--animation-fill-color-core, red);
+}
+
+/* sparks — искры вокруг */
+
+.sparks {
+  opacity: 0;
 }
 
 /* footer */
@@ -211,7 +315,6 @@
   pointer-events: none;
   opacity: 0;
 }
-
 
 /* Чтобы не прокручивать страницу при открытом модальном окне */
 body:has(dialog[open]) {
@@ -353,6 +456,16 @@ body:has(dialog[open]) {
 @media (width >= 1024px) {
     .page {
     min-block-size: 960px;
+  }
+
+  .save-button {
+    flex-direction: initial;
+  }
+
+  .save-button .save-button__floppy-icon {
+    width: 21px;
+    height: 21px;
+    fill: var(--loppy-fill-white, #fff);
   }
 
   /* position's labels and filters img */
