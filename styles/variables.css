@@ -1,78 +1,85 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 
 :root {
-    /*переменные для текста*/
-    --accent-font-PressStart2P-Regular: 'Press Start 2P';
-    --font-main-Inter: 'Inter';
-    --page-text-weight: 410;
-    --page-title-weight: 715;
-    --page-bold-title-weight: 900;
-    --page-main-font-size: 18px;
-    --font-size-button__text: 14px;
-    --font-size-html-title: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
-    --font-size-zakrivayuschiy-teg-title: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  /*переменные для текста*/
+  --accent-font-PressStart2P-Regular: "Press Start 2P";
+  --font-main-Inter: "Inter";
+  --page-text-weight: 410;
+  --page-title-weight: 715;
+  --page-bold-title-weight: 900;
+  --page-main-font-size: 18px;
+  --font-size-button__text: 14px;
+  --font-size-html-title: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  --font-size-zakrivayuschiy-teg-title: clamp(
+    0.875rem,
+    0.6769rem + 0.8451vw,
+    1.4375rem
+  );
 
-    /*background-gradient*/
-    --stripes-gradient-to-right: repeating-linear-gradient(
-        to right,
-        #d3d3d3 0px,
-        #d3d3d3 2px,
-        transparent 2px,
-        transparent 4px
-    );
-    --stripes-gradient-to-bottom: repeating-linear-gradient(
-        to bottom,
-        #d3d3d3 0px,
-        #d3d3d3 2px,
-        transparent 2px,
-        transparent 4px
-    );
-    --stripes-gradient-evenly-color: repeating-linear-gradient(
-        to bottom,
-        #e7e7e7 0%,
-        #e7e7e7 0.01%, /*светлого оттенка и начали менять цвет от 0.01% всей высоты градиента, чтобы усилить эффект*/
-        #1a1a1a 100%
-    );
+  /*background-gradient*/
+  --stripes-gradient-to-right: repeating-linear-gradient(
+    to right,
+    #d3d3d3 0px,
+    #d3d3d3 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  --stripes-gradient-to-bottom: repeating-linear-gradient(
+    to bottom,
+    #d3d3d3 0px,
+    #d3d3d3 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  --stripes-gradient-evenly-color: repeating-linear-gradient(
+    to bottom,
+    #e7e7e7 0%,
+    #e7e7e7 0.01%,
+    /*светлого оттенка и начали менять цвет от 0.01% всей высоты градиента, чтобы усилить эффект*/
+    #1a1a1a 100%
+  );
 
-    /* header */
-    --margin-block-end: clamp(100px, 28vw, 492px);
-    --margin-block-start: 100px;
-    --padding-block-start: clamp(122px, 12vw, 130px);
-    --padding-block-end: clamp(122px, 12vw, 130px);
-    --max-inline-size: 700px;
+  /* header */
+  --margin-block-end: clamp(100px, 28vw, 492px);
+  --margin-block-start: 100px;
+  --padding-block-start: clamp(122px, 12vw, 130px);
+  --padding-block-end: clamp(122px, 12vw, 130px);
+  --max-inline-size: 700px;
 
-    /* --main */
-    --main-gap: 50px;
-    --margin-post__block-content: 25px;
-    --margin-block-end: 50px;
-    --font-size-label: 14px;
-    --label-stroke-color: rgba(255, 255, 255, 0.5);
-    --margin-inline-post__title-content: 10px;
-    --margin-block-post__title-content: 4px;
-    --bg-post__image: #000;
+  /* --main */
+  --main-gap: 50px;
+  --margin-post__block-content: 25px;
+  --margin-block-end: 50px;
+  --font-size-label: 14px;
+  --label-stroke-color: rgba(255, 255, 255, 0.5);
+  --margin-inline-post__title-content: 10px;
+  --margin-block-post__title-content: 4px;
+  --bg-post__image: #000;
 
-    /* footer */
-    --footer-margin-block-end: clamp(3.125rem, 8.333rem - 4vw, 6.25rem);
+  /* footer */
+  --footer-margin-block-end: clamp(3.125rem, 8.333rem - 4vw, 6.25rem);
 
-    /* dialog */
-    --dialog-inline-size: clamp(21.3125rem, 21rem + 2vw, 22.0625rem);
-    --dialog-min-block-size: 191px;
-    --dialog-padding-block: clamp(1.875rem, 1.25rem + 2vw, 1.875rem) /* вертикальные: от 30px до 30px (стабильно) */;
-    --dialog-padding-inline: clamp(2.5rem, 1.25rem + 5vw, 2.5rem) /* горизонтальные: от 40px до 30px */;
+  /* dialog */
+  --dialog-inline-size: clamp(21.3125rem, 21rem + 2vw, 22.0625rem);
+  --dialog-min-block-size: 191px;
+  --dialog-padding-block: clamp(1.875rem, 1.25rem + 2vw, 1.875rem)
+    /* вертикальные: от 30px до 30px (стабильно) */;
+  --dialog-padding-inline: clamp(2.5rem, 1.25rem + 5vw, 2.5rem)
+    /* горизонтальные: от 40px до 30px */;
 
-    /* универсальные стили */
-    --black-border: #000;
-    --inline-size: clamp(375px, 80vw, 700px);
-    --padding-block-buttons: 12.5px;
-    --border-button-focus: rgba(0, 0, 0, 1);
+  /* универсальные стили */
+  --black-border: #000;
+  --inline-size: clamp(375px, 80vw, 700px);
+  --padding-block-buttons: 12.5px;
+  --border-button-focus: rgba(0, 0, 0, 1);
 
-     --button-text-mix: #fff; /* белый для смешивания */
-     --loppy-fill-white: #fff;
+  --button-text-mix: #fff; /* белый для смешивания */
+  --loppy-fill-white: #fff;
 
-    /* анимация цвета */
-    --color-contour: #000;
-    --animation-fill-color-core: red;
-    --sparks-color: red;
-    --main-body-color-black: #000;
-    --core-color-black: #000;
+  /* анимация цвета */
+  --color-contour: #000;
+  --animation-fill-color-core: red;
+  --sparks-color: red;
+  --main-body-color-black: #000;
+  --core-color-black: #000;
 }

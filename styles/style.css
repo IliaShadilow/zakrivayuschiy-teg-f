@@ -11,40 +11,49 @@
 */
 
 .page {
-  min-inline-size: 320px;
-  min-block-size: 100dvb;
-  font-family: var(--font-main-Inter, 'Inter'), sans-serif;
-  font-variation-settings: "wght" var(--card-text-weight, 410);
+  font-family: var(--font-main-Inter, "Inter"), sans-serif;
   font-size: var(--page-main-font-size, 18px);
-  background: var(--stripes-gradient-to-right, repeating-linear-gradient(
+  background:
+    var(
+      --stripes-gradient-to-right,
+      repeating-linear-gradient(
         to right,
         #d3d3d3 0px,
         #d3d3d3 2px,
         transparent 2px,
         transparent 4px
-    )
-    ), var(--stripes-gradient-to-bottom, repeating-linear-gradient(
+      )
+    ),
+    var(
+      --stripes-gradient-to-bottom,
+      repeating-linear-gradient(
         to bottom,
         #d3d3d3 0px,
         #d3d3d3 2px,
         transparent 2px,
         transparent 4px
-    )
-    ), var(--stripes-gradient-evenly-color, repeating-linear-gradient(
+      )
+    ),
+    var(
+      --stripes-gradient-evenly-color,
+      repeating-linear-gradient(
         to bottom,
         #e7e7e7 0%,
-        #e7e7e7 0.01%, 
+        #e7e7e7 0.01%,
         #1a1a1a 100%
-    )
+      )
     );
   background-size: cover; /* Растягиваем на всю страницу */
   background-attachment: fixed; /* чтобы зафиксировать фон на месте при прокрутке */
+  min-inline-size: 320px;
+  min-block-size: 100dvb;
+  font-variation-settings: "wght" var(--card-text-weight, 410);
   min-block-size: 667px;
 }
 
 .page::selection {
-  background-color: pink; /* поменять цвет выделения текста */
   color: white;
+  background-color: pink; /* поменять цвет выделения текста */
 }
 
 /* header */
@@ -56,9 +65,9 @@
 
 .zakrivayuschiy-teg {
   display: flex;
+  flex-direction: column;
   place-items: center; /* одновременно и justify-content и align-items */
   gap: 20px;
-  flex-direction: column;
   margin-block-start: var(--margin-block-start, 100px);
   margin-block-end: var(--margin-block-end, clamp(100px, 28vw, 492px));
   padding-block-start: var(--padding-block-start, clamp(122px, 12vw, 130px));
@@ -67,18 +76,18 @@
 
 .main {
   display: flex;
-  gap: var(--main-gap, 50px);
   justify-content: center;
+  gap: var(--main-gap, 50px);
 }
 
 /* post */
 
 .post__title {
-  font-family: var(--font-main-Inter, 'Inter'), sans-serif;
-  font-variation-settings: "wght" var(--page-title-weight, 715);
-  font-size: inherit;
   margin-inline: var(--margin-inline-post__title-content, 10px);
   margin-block: var(--margin-block-post__title-content, 4px);
+  font-family: var(--font-main-Inter, "Inter"), sans-serif;
+  font-size: inherit;
+  font-variation-settings: "wght" var(--page-title-weight, 715);
 }
 
 .post__block-content-text {
@@ -86,18 +95,18 @@
 }
 
 .post__image {
-  inline-size: 100%;
-  aspect-ratio: 1 / 1; /* квадратное */
   display: block; /* Убирает лишние пробелы под изображением */
   object-fit: cover; /* Аналогично background-size: cover */
   object-position: center; /* Аналогично background-position: center */
   background: var(--bg-post__image, #000);
+  inline-size: 100%;
+  aspect-ratio: 1 / 1; /* квадратное */
 }
 
 .post__block-content {
   display: flex;
-  gap: 25px;
   flex-direction: column;
+  gap: 25px;
   margin-inline: var(--margin-post__block-content, 25px);
   margin-block: var(--margin-post__block-content, 25px);
 }
@@ -108,17 +117,17 @@
 }
 
 .post__artile .label-html {
-  font-size: var(--font-size-label, 14px);
-  display: block;
   position: absolute;
+  z-index: 20;
+  display: block;
+  margin-inline-start: 71%;
+  margin-block-start: 4%;
+  font-size: var(--font-size-label, 14px);
   -webkit-text-stroke: 1px var(--label-stroke-color, rgba(255, 255, 255, 0.5)); /* обводка текста */
   -moz-text-stroke: 1px var(--label-stroke-color, rgba(255, 255, 255, 0.5)); /* Firefox  */
   -o-text-stroke: 1px var(--label-stroke-color, rgba(255, 255, 255, 0.5)); /* для старой оперы */
   mix-blend-mode: hard-light; /* Режим смешивания */
   white-space: nowrap;
-  margin-inline-start: 71%;
-  margin-block-start: 4%;
-  z-index: 20;
 }
 
 /* animation-buttons */
@@ -131,7 +140,7 @@
 
 .card__like-button {
   padding-inline: 37px;
-  padding-block: var(--padding-block-buttons, 12.5px); 
+  padding-block: var(--padding-block-buttons, 12.5px);
 }
 
 .save-button {
@@ -142,18 +151,18 @@
 }
 
 .button__text {
-  font-size: var(--font-size-button__text, 14px);
-  /* Измменение цвета при наведении */
-  color: var(--button-text-mix); /* белый */
-  mix-blend-mode: difference;
   position: relative;
   z-index: 1; /* выше псевдоэлемента с z-index: -1 */
+  /* Измменение цвета при наведении */
+  color: var(--button-text-mix); /* белый */
+  font-size: var(--font-size-button__text, 14px);
+  mix-blend-mode: difference;
 }
 
 /* Иконка дискеты в кнопке "Сохранить на память" */
 .save-button .save-button__floppy-icon {
-  mix-blend-mode: difference;
   fill: var(--loppy-fill-white, #fff);
+  mix-blend-mode: difference;
   /* Если иконка не позиционирована, она останется в потоке */
 }
 
@@ -169,28 +178,32 @@
 .post .card__like-button::after,
 .footer .save-button::after,
 .dialog .ok-button::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%; 
-  height: 100%; 
-  background-color: var(--border-button-focus, #000); 
   z-index: -1; /* Отправляем фон под текст */
-  transform: scaleX(0);/* Начальное состояние: сплющен по ширине (0%) или transform: translateX(-100%);*/
-  transform-origin: left; /* Точка трансформации — левый край */
+  width: 100%;
+  height: 100%;
+  background-color: var(--border-button-focus, #000);
   transition: transform 0.5s ease-in-out; /* Плавность заполнения */
+  transform: scaleX(
+    0
+  ); /* Начальное состояние: сплющен по ширине (0%) или transform: translateX(-100%);*/
+  transform-origin: left; /* Точка трансформации — левый край */
 }
 
 .post .card__like-button:hover::after,
 .footer .save-button:hover::after,
 .dialog .ok-button:hover::after {
-  transform: scaleX(1); /* растягиваем на 100% ширины или or transform: translateX(0); */
+  transform: scaleX(
+    1
+  ); /* растягиваем на 100% ширины или or transform: translateX(0); */
 }
 
 .card__icon-button {
-  border: 2px solid transparent;        /* прозрачная рамка для сохранения размера как в задании */
-  transition: border-color 0.3s ease;   /* плавность при изменении цвета */
+  border: 2px solid transparent; /* прозрачная рамка для сохранения размера как в задании */
+  transition: border-color 0.3s ease; /* плавность при изменении цвета */
 }
 
 .post .card__icon-button:focus-visible {
@@ -207,15 +220,17 @@
   transition: none;
 }
 
-.like-icon.is-liked .main-body { 
-  transition: opacity 0.3s linear 0.05s, fill 0.3s linear 0.05s;
+.like-icon.is-liked .main-body {
   opacity: 1;
   fill: var(--animation-fill-color-core, red);
+  transition:
+    opacity 0.3s linear 0.05s,
+    fill 0.3s linear 0.05s;
 }
 
-.like-icon.is-liked .contour { 
-  transition: fill 0.3s linear 0.06s;
+.like-icon.is-liked .contour {
   fill: var(--animation-fill-color-core, red);
+  transition: fill 0.3s linear 0.06s;
 }
 
 /* увеличить всё сердце и добавляет искры */
@@ -232,46 +247,59 @@
 /* core — сердцевина */
 
 .core {
-  transition: opacity 0.3s linear 0.03s; /*transition: opacity 0.3s linear 0.03s, fill 0.3s linear;*/
   opacity: 0;
   fill: var(--core-color-black, #000);
+  transition: opacity 0.3s linear 0.03s; /*transition: opacity 0.3s linear 0.03s, fill 0.3s linear;*/
 }
 
-.like-icon:hover .core { /* так это выглядит Для стилизации вам понадобится отслеживать наведение на основной обёртке (.like-icon), а после — выбирать нужный элемент. */
-  transition: opacity 0.3s linear, fill 0.3s linear;
+.like-icon:hover .core {
   opacity: 1;
   fill: var(--core-color-black, #000);
+  /* так это выглядит Для стилизации вам понадобится отслеживать наведение на основной обёртке (.like-icon), а после — выбирать нужный элемент. */
+  transition:
+    opacity 0.3s linear,
+    fill 0.3s linear;
 }
 
-.like-icon:active .core { /* так это выглядит Для стилизации вам понадобится отслеживать наведение на основной обёртке (.like-icon), а после — выбирать нужный элемент. */
-  transition: opacity 0.3s linear, fill 0.3s linear;
+.like-icon:active .core {
   opacity: 1;
   fill: var(--animation-fill-color-core, red);
+  /* так это выглядит Для стилизации вам понадобится отслеживать наведение на основной обёртке (.like-icon), а после — выбирать нужный элемент. */
+  transition:
+    opacity 0.3s linear,
+    fill 0.3s linear;
 }
 
 /* contour — контур */
 
 .contour {
-  transition: fill 0.1s linear; 
+  transition: fill 0.1s linear;
 }
 
 /* main-body — основное тело сердца; */
 
 .main-body {
   opacity: 0;
-  transition: opacity 0.3s linear, fill 0.3s linear;
+  transition:
+    opacity 0.3s linear,
+    fill 0.3s linear;
 }
 
-.like-icon:hover .main-body { /* так это выглядит Для стилизации вам понадобится отслеживать наведение на основной обёртке (.like-icon), а после — выбирать нужный элемент. */
-  transition: opacity 0.3s linear 0.05s, fill 0.3s linear 0.05s;
+.like-icon:hover .main-body {
   opacity: 1;
   fill: var(--main-body-color-black, #000);
+  /* так это выглядит Для стилизации вам понадобится отслеживать наведение на основной обёртке (.like-icon), а после — выбирать нужный элемент. */
+  transition:
+    opacity 0.3s linear 0.05s,
+    fill 0.3s linear 0.05s;
 }
 
-.like-icon:active .main-body { 
-  transition: opacity 0.3s linear 0.05s, fill 0.3s linear 0.05s;
+.like-icon:active .main-body {
   opacity: 1;
   fill: var(--animation-fill-color-core, red);
+  transition:
+    opacity 0.3s linear 0.05s,
+    fill 0.3s linear 0.05s;
 }
 
 /* sparks — искры вокруг */
@@ -285,35 +313,47 @@
 .footer {
   display: flex;
   justify-content: center;
-  margin-block-end: var(--footer-margin-block-end, clamp(3.125rem, 8.333rem - 4vw, 6.25rem));
+  margin-block-end: var(
+    --footer-margin-block-end,
+    clamp(3.125rem, 8.333rem - 4vw, 6.25rem)
+  );
 }
 
 .save-button {
-  padding-block: clamp(17px, 2.5vw, 20.5px);  /* от 17px до 20.5px */
-  padding-inline: 20px;                        /* фиксированные 20px */
+  padding-inline: 20px; /* фиксированные 20px */
+  padding-block: clamp(17px, 2.5vw, 20.5px); /* от 17px до 20.5px */
 }
 
 /* dialog */
 
 .dialog {
-  display: flex;
-  place-items: center;
-  flex-direction: column;
-  inline-size: var(--dialog-inline-size, clamp(21.3125rem, 21rem + 2vw, 22.0625rem));
-  min-block-size: var(--dialog-min-block-size, 191px);
-  padding-block: var(--dialog-padding-block, clamp(1.875rem, 1.25rem + 2vw, 1.875rem));
-  padding-inline: var(--dialog-padding-inline, clamp(2.5rem, 1.25rem + 5vw, 2.5rem));
-  justify-content: space-between;
   position: fixed; /* центрирование */
   inset: 0; /* центрирование */
-  transition: opacity 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  justify-content: space-between;
   gap: 30px;
+  padding-inline: var(
+    --dialog-padding-inline,
+    clamp(2.5rem, 1.25rem + 5vw, 2.5rem)
+  );
+  padding-block: var(
+    --dialog-padding-block,
+    clamp(1.875rem, 1.25rem + 2vw, 1.875rem)
+  );
+  transition: opacity 0.3s ease-in-out;
+  inline-size: var(
+    --dialog-inline-size,
+    clamp(21.3125rem, 21rem + 2vw, 22.0625rem)
+  );
+  min-block-size: var(--dialog-min-block-size, 191px);
 }
 
 /* Состояние, когда диалог скрыт (без атрибута open) */
 .dialog:not([open]) {
-  pointer-events: none;
   opacity: 0;
+  pointer-events: none;
 }
 
 /* Чтобы не прокручивать страницу при открытом модальном окне */
@@ -323,7 +363,7 @@ body:has(dialog[open]) {
 
 /* Стилизация фона (backdrop) */
 .dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.75); 
+  background-color: rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(3px);
 }
 
@@ -333,8 +373,8 @@ body:has(dialog[open]) {
 }
 
 .ok-button {
-  inline-size: 100%;
   padding-block: var(--padding-block-buttons, 12.5px);
+  inline-size: 100%;
 }
 
 /* position's labels and filters img */
@@ -423,38 +463,47 @@ body:has(dialog[open]) {
 }
 
 .pixele-title {
-  font-family: var(--accent-font-PressStart2P-Regular, 'Press Start 2P'), sans-serif;
+  font-family:
+    var(--accent-font-PressStart2P-Regular, "Press Start 2P"), sans-serif;
   line-height: 1.5;
   word-spacing: -11px;
 }
 
 .zakrivayuschiy-teg__html {
-  font-size: var(--font-size-html-title, clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem));
+  font-size: var(
+    --font-size-html-title,
+    clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem)
+  );
 }
 
 .zakrivayuschiy-teg__title {
-  font-size: var(--font-size-zakrivayuschiy-teg-title, clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem));
+  font-size: var(
+    --font-size-zakrivayuschiy-teg-title,
+    clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem)
+  );
 }
 
 .black-border {
-  border: 2px solid var(--black-border, #000);
-  background: #fff;
   position: relative;
   z-index: 1; /* Чтобы текст был выше псевдоэлемента */
+  border: 2px solid var(--black-border, #000);
+  background: #fff;
 }
 
 /* прогрессивное улучшение */
 
-@supports (text-stroke: 1px var(--label-stroke-color, rgba(255, 255, 255, 0.5))) {
+@supports (
+  text-stroke: 1px var(--label-stroke-color, rgba(255, 255, 255, 0.5))
+) {
   .post__artile .label-html {
-  text-stroke: 1px var(--label-stroke-color, rgba(255, 255, 255, 0.5));
+    text-stroke: 1px var(--label-stroke-color, rgba(255, 255, 255, 0.5));
   }
 }
 
 /* адаптив */
 
 @media (width >= 1024px) {
-    .page {
+  .page {
     min-block-size: 960px;
   }
 
@@ -519,5 +568,4 @@ body:has(dialog[open]) {
   .post__artile .label-html-thumbs-up {
     margin-inline-start: 81%;
   }
-  
 }
