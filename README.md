@@ -2,7 +2,7 @@
 
 https://github.com/IliaShadilow/zakrivayuschiy-teg-f
 
-# ссышка на сайт
+# ссылка на сайт
 
 https://iliashadilow.github.io/zakrivayuschiy-teg-f/
 
