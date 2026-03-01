@@ -11,14 +11,14 @@
 */
 
 .page {
-  font-family: var(--font-main-Inter, "Inter"), sans-serif;
+  font-family: var(--font-main-Inter, 'Inter'), sans-serif;
   font-size: var(--page-main-font-size, 18px);
   background:
     var(
       --stripes-gradient-to-right,
       repeating-linear-gradient(
         to right,
-        #d3d3d3 0px,
+        #d3d3d3 0,
         #d3d3d3 2px,
         transparent 2px,
         transparent 4px
@@ -28,7 +28,7 @@
       --stripes-gradient-to-bottom,
       repeating-linear-gradient(
         to bottom,
-        #d3d3d3 0px,
+        #d3d3d3 0,
         #d3d3d3 2px,
         transparent 2px,
         transparent 4px
@@ -46,8 +46,7 @@
   background-size: cover; /* Растягиваем на всю страницу */
   background-attachment: fixed; /* чтобы зафиксировать фон на месте при прокрутке */
   min-inline-size: 320px;
-  min-block-size: 100dvb;
-  font-variation-settings: "wght" var(--card-text-weight, 410);
+  font-variation-settings: 'wght' var(--card-text-weight, 410);
   min-block-size: 667px;
 }
 
@@ -85,13 +84,13 @@
 .post__title {
   margin-inline: var(--margin-inline-post__title-content, 10px);
   margin-block: var(--margin-block-post__title-content, 4px);
-  font-family: var(--font-main-Inter, "Inter"), sans-serif;
+  font-family: var(--font-main-Inter, 'Inter'), sans-serif;
   font-size: inherit;
-  font-variation-settings: "wght" var(--page-title-weight, 715);
+  font-variation-settings: 'wght' var(--page-title-weight, 715);
 }
 
 .post__block-content-text {
-  font-variation-settings: "wght" var(--page-text-weight, 410);
+  font-variation-settings: 'wght' var(--page-text-weight, 410);
 }
 
 .post__image {
@@ -123,9 +122,9 @@
   margin-inline-start: 71%;
   margin-block-start: 4%;
   font-size: var(--font-size-label, 14px);
-  -webkit-text-stroke: 1px var(--label-stroke-color, rgba(255, 255, 255, 0.5)); /* обводка текста */
-  -moz-text-stroke: 1px var(--label-stroke-color, rgba(255, 255, 255, 0.5)); /* Firefox  */
-  -o-text-stroke: 1px var(--label-stroke-color, rgba(255, 255, 255, 0.5)); /* для старой оперы */
+  -webkit-text-stroke: 1px var(--label-stroke-color, rgb(255 255 255 / 0.5)); /* обводка текста */
+  -moz-text-stroke: 1px var(--label-stroke-color, rgb(255 255 255 / 0.5)); /* Firefox  */
+  -o-text-stroke: 1px var(--label-stroke-color, rgb(255 255 255 / 0.5)); /* для старой оперы */
   mix-blend-mode: hard-light; /* Режим смешивания */
   white-space: nowrap;
 }
@@ -160,6 +159,7 @@
 }
 
 /* Иконка дискеты в кнопке "Сохранить на память" */
+
 .save-button .save-button__floppy-icon {
   fill: var(--loppy-fill-white, #fff);
   mix-blend-mode: difference;
@@ -171,14 +171,14 @@
 .post .black-border:focus-visible,
 .footer .black-border:focus-visible,
 .dialog .black-border:focus-visible {
-  box-shadow: 2px 2px 0 0 var(--border-button-focus, rgba(0, 0, 0, 1));
+  box-shadow: 2px 2px 0 0 var(--border-button-focus, rgb(0 0 0 / 1));
   transition: box-shadow 0.3s ease;
 }
 
 .post .card__like-button::after,
 .footer .save-button::after,
 .dialog .ok-button::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -207,7 +207,7 @@
 }
 
 .post .card__icon-button:focus-visible {
-  border: 2px solid var(--border-button-focus, rgba(0, 0, 0, 1));
+  border: 2px solid var(--border-button-focus, rgb(0 0 0 / 1));
 }
 
 /* Анимация сердца */
@@ -351,19 +351,22 @@
 }
 
 /* Состояние, когда диалог скрыт (без атрибута open) */
+
 .dialog:not([open]) {
   opacity: 0;
   pointer-events: none;
 }
 
 /* Чтобы не прокручивать страницу при открытом модальном окне */
+
 body:has(dialog[open]) {
   overflow: hidden;
 }
 
 /* Стилизация фона (backdrop) */
+
 .dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgb(0 0 0 / 0.75);
   backdrop-filter: blur(3px);
 }
 
@@ -464,7 +467,7 @@ body:has(dialog[open]) {
 
 .pixele-title {
   font-family:
-    var(--accent-font-PressStart2P-Regular, "Press Start 2P"), sans-serif;
+    var(--accent-font-PressStart2P-Regular, 'Press Start 2P'), sans-serif;
   line-height: 1.5;
   word-spacing: -11px;
 }
@@ -495,14 +498,16 @@ body:has(dialog[open]) {
 @supports (
   text-stroke: 1px var(--label-stroke-color, rgba(255, 255, 255, 0.5))
 ) {
+
   .post__artile .label-html {
-    text-stroke: 1px var(--label-stroke-color, rgba(255, 255, 255, 0.5));
+    text-stroke: 1px var(--label-stroke-color, rgb(255 255 255 / 0.5));
   }
 }
 
 /* адаптив */
 
 @media (width >= 1024px) {
+
   .page {
     min-block-size: 960px;
   }
