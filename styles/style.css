@@ -11,7 +11,7 @@
 */
 
 .page {
-  font-family: var(--font-main-Inter, 'Inter'), sans-serif;
+  font-family: var(--font-main, 'Inter'), sans-serif;
   font-size: var(--page-main-font-size, 18px);
   background:
     var(
@@ -47,12 +47,6 @@
   background-attachment: fixed; /* чтобы зафиксировать фон на месте при прокрутке */
   min-inline-size: 320px;
   font-variation-settings: 'wght' var(--card-text-weight, 410);
-  min-block-size: 667px;
-}
-
-.page::selection {
-  color: white;
-  background-color: pink; /* поменять цвет выделения текста */
 }
 
 /* header */
@@ -62,13 +56,13 @@
   justify-content: center;
 }
 
-.zakrivayuschiy-teg {
+.closing_tag {
   display: flex;
   flex-direction: column;
   place-items: center; /* одновременно и justify-content и align-items */
-  gap: 20px;
+  gap: 18px;
   margin-block-start: var(--margin-block-start, 100px);
-  margin-block-end: var(--margin-block-end, clamp(100px, 28vw, 492px));
+  margin-block-end: var(--margin-block-end, 101px);
   padding-block-start: var(--padding-block-start, clamp(122px, 12vw, 130px));
   padding-block-end: var(--padding-block-end, clamp(122px, 12vw, 130px));
 }
@@ -81,52 +75,94 @@
 
 /* post */
 
+.post {
+  display: grid;
+  gap: 54px;
+}
+
 .post__title {
   margin-inline: var(--margin-inline-post__title-content, 10px);
   margin-block: var(--margin-block-post__title-content, 4px);
-  font-family: var(--font-main-Inter, 'Inter'), sans-serif;
+}
+
+.title {
+  font-family: var(--font-main, 'Inter'), sans-serif;
   font-size: inherit;
+}
+
+.post__title.title {
   font-variation-settings: 'wght' var(--page-title-weight, 715);
 }
 
-.post__block-content-text {
+.post__text {
   font-variation-settings: 'wght' var(--page-text-weight, 410);
 }
 
 .post__image {
   display: block; /* Убирает лишние пробелы под изображением */
   object-fit: cover; /* Аналогично background-size: cover */
-  object-position: center; /* Аналогично background-position: center */
+  object-position: center; /* Аналогично background-position: center */ 
   background: var(--bg-post__image, #000);
   inline-size: 100%;
   aspect-ratio: 1 / 1; /* квадратное */
+  transform: translateY(2px);
+}
+
+/* filters img */
+
+.filter-sepia-brightness {
+  filter: sepia(77%) brightness(62%);
+}
+
+.filter-saturate-grayscale {
+  filter: saturate(50%) grayscale(100%);
+}
+
+.filter-hue-rotate-drop-shadow {
+  filter: hue-rotate(160deg) drop-shadow(18px 18px 10px #51b124);
+}
+
+.filter-saturate-blur {
+  filter: saturate(160%) blur(3px);
+}
+
+.filter-opacity-contrast {
+  filter: opacity(111%) contrast(0.7);
+}
+
+.filter-opacity-brightness {
+  filter: opacity(90%) brightness(63%);
+}
+
+.filter-saturate {
+  filter: saturate(175%);
 }
 
 .post__block-content {
   display: flex;
   flex-direction: column;
-  gap: 25px;
-  margin-inline: var(--margin-post__block-content, 25px);
-  margin-block: var(--margin-post__block-content, 25px);
+  gap: 24.5px;
+  margin-inline: var(--margin-post__block-content, 7%);
+  margin-block-start: var(--margin-post__block-content, 7%);
+  margin-block-end: var(--margin-post__block-content-end, 5%);
 }
 
-.post__artile {
-  position: relative;
-  margin-block-end: var(--margin-block-end, 50px);
-}
-
-.post__artile .label-html {
+.image-label {
   position: absolute;
   z-index: 20;
   display: block;
-  margin-inline-start: 71%;
-  margin-block-start: 4%;
+  top: 55px;
+  right: 23px;
   font-size: var(--font-size-label, 14px);
-  -webkit-text-stroke: 1px var(--label-stroke-color, rgb(255 255 255 / 0.5)); /* обводка текста */
-  -moz-text-stroke: 1px var(--label-stroke-color, rgb(255 255 255 / 0.5)); /* Firefox  */
-  -o-text-stroke: 1px var(--label-stroke-color, rgb(255 255 255 / 0.5)); /* для старой оперы */
+  font-family: var(--accent-font, 'Press Start 2P'), sans-serif;
+  opacity: 0.5;
+  text-shadow: 0 0 1px var(--text-stroke-color, #fff); /* Запасной вариант - тень */
   mix-blend-mode: hard-light; /* Режим смешивания */
   white-space: nowrap;
+}
+
+.image-label-top {
+  top: 76px;
 }
 
 /* animation-buttons */
@@ -134,12 +170,11 @@
 .animation-buttons {
   display: flex;
   justify-content: end;
-  gap: 12px;
 }
 
 .card__like-button {
-  padding-inline: 37px;
-  padding-block: var(--padding-block-buttons, 12.5px);
+  padding-inline: 11%;
+  margin-block: 1%;
 }
 
 .save-button {
@@ -147,15 +182,12 @@
   flex-direction: column;
   place-items: center;
   gap: 8px;
+  padding-inline: 18px; /* фиксированные 20px */
+  padding-block: clamp(16px, 2.5vw, 20.5px); /* от 17px до 20.5px */
 }
 
-.button__text {
-  position: relative;
-  z-index: 1; /* выше псевдоэлемента с z-index: -1 */
-  /* Измменение цвета при наведении */
-  color: var(--button-text-mix); /* белый */
-  font-size: var(--font-size-button__text, 14px);
-  mix-blend-mode: difference;
+.margin-top {
+  margin-block-start: 13%;
 }
 
 /* Иконка дискеты в кнопке "Сохранить на память" */
@@ -168,37 +200,48 @@
 
 /* focus and hover buttons */
 
-.post .black-border:focus-visible,
-.footer .black-border:focus-visible,
-.dialog .black-border:focus-visible {
+.post .button:focus-visible,
+.save-section .button:focus-visible,
+.dialog .button:focus-visible {
   box-shadow: 2px 2px 0 0 var(--border-button-focus, rgb(0 0 0 / 1));
   transition: box-shadow 0.3s ease;
 }
 
-.post .card__like-button::after,
-.footer .save-button::after,
-.dialog .ok-button::after {
+.button {
+  position: relative;
+  z-index: 1;
+  border: 2px solid var(--black-border, #000);
+  background: #fff;
+  cursor: pointer;
+}
+
+/* Анимация заполнения для всех кнопок с текстом */
+.button::after {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1; /* Отправляем фон под текст */
+  z-index: -1;
   width: 100%;
   height: 100%;
   background-color: var(--border-button-focus, #000);
-  transition: transform 0.5s ease-in-out; /* Плавность заполнения */
-  transform: scaleX(
-    0
-  ); /* Начальное состояние: сплющен по ширине (0%) или transform: translateX(-100%);*/
-  transform-origin: left; /* Точка трансформации — левый край */
+  transition: transform 0.5s ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left;
 }
 
-.post .card__like-button:hover::after,
-.footer .save-button:hover::after,
-.dialog .ok-button:hover::after {
-  transform: scaleX(
-    1
-  ); /* растягиваем на 100% ширины или or transform: translateX(0); */
+.button:hover::after {
+  transform: scaleX(1);
+}
+
+/* Стили для текста внутри кнопок */
+.button__text {
+  position: relative;
+  z-index: 1;
+  color: var(--button-text-mix, #fff);
+  font-size: var(--font-size-button__text, 14px);
+  font-family: var(--accent-font, 'Press Start 2P'), sans-serif;
+  mix-blend-mode: difference;
 }
 
 .card__icon-button {
@@ -206,7 +249,7 @@
   transition: border-color 0.3s ease; /* плавность при изменении цвета */
 }
 
-.post .card__icon-button:focus-visible {
+.card__icon-button:focus-visible { 
   border: 2px solid var(--border-button-focus, rgb(0 0 0 / 1));
 }
 
@@ -215,17 +258,13 @@
 /* анимация всего сердца */
 
 .like-icon.is-liked .core {
-  opacity: 1;
   fill: var(--animation-fill-color-core, red);
-  transition: none;
+  transition: fill 0.3s linear; /* без забержки */
 }
 
 .like-icon.is-liked .main-body {
-  opacity: 1;
   fill: var(--animation-fill-color-core, red);
-  transition:
-    opacity 0.3s linear 0.05s,
-    fill 0.3s linear 0.05s;
+  transition: fill 0.3s linear 0.05s;
 }
 
 .like-icon.is-liked .contour {
@@ -247,26 +286,21 @@
 /* core — сердцевина */
 
 .core {
-  opacity: 0;
-  fill: var(--core-color-black, #000);
-  transition: opacity 0.3s linear 0.03s; /*transition: opacity 0.3s linear 0.03s, fill 0.3s linear;*/
+  fill: transparent;
+  transition: fill 0.3s linear 0.03s;
 }
 
 .like-icon:hover .core {
-  opacity: 1;
-  fill: var(--core-color-black, #000);
+  fill: var(--core-color, #000);
   /* так это выглядит Для стилизации вам понадобится отслеживать наведение на основной обёртке (.like-icon), а после — выбирать нужный элемент. */
   transition:
-    opacity 0.3s linear,
     fill 0.3s linear;
 }
 
 .like-icon:active .core {
-  opacity: 1;
   fill: var(--animation-fill-color-core, red);
   /* так это выглядит Для стилизации вам понадобится отслеживать наведение на основной обёртке (.like-icon), а после — выбирать нужный элемент. */
   transition:
-    opacity 0.3s linear,
     fill 0.3s linear;
 }
 
@@ -279,26 +313,21 @@
 /* main-body — основное тело сердца; */
 
 .main-body {
-  opacity: 0;
+  fill: transparent; 
   transition:
-    opacity 0.3s linear,
     fill 0.3s linear;
 }
 
 .like-icon:hover .main-body {
-  opacity: 1;
-  fill: var(--main-body-color-black, #000);
+  fill: var(--main-body-color, #000);
   /* так это выглядит Для стилизации вам понадобится отслеживать наведение на основной обёртке (.like-icon), а после — выбирать нужный элемент. */
   transition:
-    opacity 0.3s linear 0.05s,
     fill 0.3s linear 0.05s;
 }
 
 .like-icon:active .main-body {
-  opacity: 1;
   fill: var(--animation-fill-color-core, red);
   transition:
-    opacity 0.3s linear 0.05s,
     fill 0.3s linear 0.05s;
 }
 
@@ -308,27 +337,22 @@
   opacity: 0;
 }
 
-/* footer */
+/* save-section */
 
-.footer {
+.save-section {
   display: flex;
   justify-content: center;
   margin-block-end: var(
-    --footer-margin-block-end,
+    --save-section-margin-block-end,
     clamp(3.125rem, 8.333rem - 4vw, 6.25rem)
   );
-}
-
-.save-button {
-  padding-inline: 20px; /* фиксированные 20px */
-  padding-block: clamp(17px, 2.5vw, 20.5px); /* от 17px до 20.5px */
 }
 
 /* dialog */
 
 .dialog {
-  position: fixed; /* центрирование */
-  inset: 0; /* центрирование */
+  position: fixed; 
+  inset: 0; 
   display: flex;
   flex-direction: column;
   place-items: center;
@@ -342,12 +366,10 @@
     --dialog-padding-block,
     clamp(1.875rem, 1.25rem + 2vw, 1.875rem)
   );
-  transition: opacity 0.3s ease-in-out;
   inline-size: var(
     --dialog-inline-size,
     clamp(21.3125rem, 21rem + 2vw, 22.0625rem)
   );
-  min-block-size: var(--dialog-min-block-size, 191px);
 }
 
 /* Состояние, когда диалог скрыт (без атрибута open) */
@@ -367,96 +389,20 @@ body:has(dialog[open]) {
 
 .dialog::backdrop {
   background-color: rgb(0 0 0 / 0.75);
-  backdrop-filter: blur(3px);
 }
 
 .dialog__content {
   display: flex;
-  gap: 20px;
+  gap: 19px;
+}
+
+.dialog .button__text {
+  line-height: 1.5;
 }
 
 .ok-button {
-  padding-block: var(--padding-block-buttons, 12.5px);
+  padding-block: 6.5px;
   inline-size: 100%;
-}
-
-/* position's labels and filters img */
-
-/* knight */
-
-.post__artile .label-html-knight {
-  margin-inline-start: 65%;
-  margin-block-start: 3%;
-}
-
-.post__image-knight {
-  filter: sepia(77%) brightness(62%);
-}
-
-/* boy-smoking */
-
-.post__artile .label-html-boy-smoking {
-  margin-inline-start: 60%;
-  margin-block-start: 4%;
-}
-
-.post__image-boy-smoking {
-  filter: saturate(50%) grayscale(100%);
-}
-
-/* coders */
-
-.post__artile .label-html-coders {
-  margin-inline-start: 63%;
-  margin-block-start: 2%;
-}
-
-.post__image-coders {
-  filter: hue-rotate(160deg) drop-shadow(18px 18px 10px #51b124);
-}
-
-/* simpsons-hug */
-
-.post__artile .label-html-simpsons-hug {
-  margin-inline-start: 52%;
-  margin-block-start: 3%;
-}
-
-.post__image-simpsons-hug {
-  filter: saturate(160%) blur(3px);
-}
-
-/* boy-in-meadow */
-
-.post__artile .label-html-boy-in-meadow {
-  margin-inline-start: 53%;
-  margin-block-start: 6%;
-}
-
-.post__image-boy-in-meadow {
-  filter: opacity(111%) contrast(0.7);
-}
-
-/* river */
-
-.post__artile .label-html-river {
-  margin-inline-start: 68%;
-  margin-block-start: 3%;
-}
-
-.post__image-river {
-  filter: opacity(90%) brightness(63%);
-}
-
-/* thumbs-up */
-
-.post__artile .label-html-thumbs-up {
-  margin-inline-start: 68%;
-  margin-block-start: 3%;
-}
-
-.post__image-thumbs-up {
-  filter: saturate(175%);
 }
 
 /* универсальные стили */
@@ -465,25 +411,24 @@ body:has(dialog[open]) {
   inline-size: var(--inline-size, clamp(375px, 80vw, 700px));
 }
 
-.pixele-title {
+.accent-font {
   font-family:
-    var(--accent-font-PressStart2P-Regular, 'Press Start 2P'), sans-serif;
-  line-height: 1.5;
-  word-spacing: -11px;
+    var(--accent-font, 'Press Start 2P'), sans-serif;
 }
 
-.zakrivayuschiy-teg__html {
+.closing_tag__html {
   font-size: var(
     --font-size-html-title,
     clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem)
   );
 }
 
-.zakrivayuschiy-teg__title {
+.closing_tag__title {
   font-size: var(
-    --font-size-zakrivayuschiy-teg-title,
+    --font-size-closing_tag-title,
     clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem)
   );
+  text-transform: uppercase;
 }
 
 .black-border {
@@ -495,23 +440,18 @@ body:has(dialog[open]) {
 
 /* прогрессивное улучшение */
 
-@supports (
-  text-stroke: 1px var(--label-stroke-color, rgba(255, 255, 255, 0.5))
-) {
-
-  .post__artile .label-html {
-    text-stroke: 1px var(--label-stroke-color, rgb(255 255 255 / 0.5));
+@supports ((text-stroke: 1px var(--text-stroke-color, #fff)) or (-webkit-text-stroke: 1px var(--text-stroke-color, #fff))) {
+  .image-label {
+    color: initial; /* Возвращаем обычный цвет текста */
+    text-shadow: none; /* Убираем тень */
+    -webkit-text-stroke: 1px var(--text-stroke-color, #fff);
+    text-stroke: 1px var(--text-stroke-color, #fff);
   }
 }
 
 /* адаптив */
 
 @media (width >= 1024px) {
-
-  .page {
-    min-block-size: 960px;
-  }
-
   .save-button {
     flex-direction: initial;
   }
@@ -524,53 +464,8 @@ body:has(dialog[open]) {
 
   /* position's labels and filters img */
 
-  .post__artile .label-html {
+  /* .image-label {
     margin-inline-start: 83%;
     margin-block-start: 3%;
-  }
-
-  /* knight */
-
-  .post__artile .label-html-knight {
-    margin-inline-start: 80%;
-  }
-
-  /* boy-smoking */
-
-  .post__artile .label-html-boy-smoking {
-    margin-inline-start: 77%;
-    margin-block-start: 3%;
-  }
-
-  /* coders */
-
-  .post__artile .label-html-coders {
-    margin-inline-start: 79%;
-    margin-block-start: 3%;
-  }
-
-  /* simpsons-hug */
-
-  .post__artile .label-html-simpsons-hug {
-    margin-inline-start: 73%;
-  }
-
-  /* boy-in-meadow */
-
-  .post__artile .label-html-boy-in-meadow {
-    margin-inline-start: 73%;
-    margin-block-start: 6%;
-  }
-
-  /* river */
-
-  .post__artile .label-html-river {
-    margin-inline-start: 80%;
-  }
-
-  /* thumbs-up */
-
-  .post__artile .label-html-thumbs-up {
-    margin-inline-start: 81%;
-  }
+  } */
 }

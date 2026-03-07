@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html> 
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
@@ -27,42 +27,40 @@
   </head>
   <body class="page">
     <header class="header">
-      <div class="zakrivayuschiy-teg black-border max-width-block">
-        <h1 class="pixele-title zakrivayuschiy-teg__html">&lt;/HTML&gt;</h1>
-        <h2 class="pixele-title zakrivayuschiy-teg__title">закрывающий тег</h2>
+      <div class="closing_tag black-border max-width-block">
+        <h1 class="accent-font closing_tag__html">&lt;/HTML&gt;</h1> <!-- название книги -->
+        <p class="accent-font closing_tag__title">закрывающий тег</p> <!-- p - ничего не озаглавливает, а не h -->
       </div>
     </header>
     <main class="main">
       <section class="post max-width-block">
-        <article class="post__artile black-border">
-          <!-- посомтреть будет ли тут использоваться класс пост или нет -->
-          <h2 class="post__title title-bold">
+        <article class="black-border">
+          <h2 class="post__title title">
             Фритрек и нулевой спринт: Подготовка к работе
           </h2>
-          <h3
-            class="pixele-title zakrivayuschiy-teg__html label-html"
+          <p
+            class="image-label image-label-top"
             aria-hidden="true"
           >
             &lt;/HTML&gt;
-          </h3>
+          </p>
           <img
             src="./images/bus.png"
             alt="пиксельный фургон стоит под ночным небом"
             class="post__image"
+            loading="lazy"
           />
           <div class="post__block-content">
-            <p class="post__block-content-text">
+            <p class="post__text">
               Это было самое начало пути. На этом этапе важно было проникнуться
               основами и настроиться на учёбу. И, возможно, подумать, как новые
               знания могут повлиять на ваше будущее.
             </p>
-            <p class="post__text-content-text">
-              Абсолютное не понимание куда я попал и куда это меня притянет, не
-              долго думая я нажал на конопку "Начать учиться" и решил
-              посмотреть, что из этого выйдет(спойлер - было не зря🔥).
+            <p class="post__text">
+              Место для ваших воспоминаний о начале обучения.
             </p>
             <div class="animation-buttons">
-              <button type="button" class="card__icon-button" aria-label="Like">
+              <button type="button" class="card__icon-button" aria-label="Нравится">
                 <!-- для фокуса добавь black-border и свойство позишен фиксид чтобы не прыгал -->
                 <svg
                   class="like-icon"
@@ -71,6 +69,7 @@
                   height="36"
                   fill="none"
                   viewBox="0 0 39 36"
+                  aria-hidden="true"
                 >
                   <g class="heart">
                     <path
@@ -96,45 +95,40 @@
                   />
                 </svg>
               </button>
-              <button type="button" class="card__like-button black-border">
-                <span class="button__text pixele-title">Like</span>
+              <button type="button" class="card__like-button button">
+                <span class="button__text">Like</span>
               </button>
             </div>
           </div>
         </article>
-        <article class="post__artile black-border">
-          <h2 class="post__title title-bold">1 спринт: Я — чистый лист</h2>
-          <h3
-            class="pixele-title zakrivayuschiy-teg__html label-html label-html-knight"
+        <article class="black-border">
+          <h2 class="post__title title">
+            1 спринт: Я — чистый лист
+          </h2>
+          <p
+            class="image-label"
             aria-hidden="true"
           >
-            &lt;/начало&gt;
-          </h3>
+            &lt;/HTML&gt;
+          </p>
           <img
             src="./images/warrior.webp"
-            alt="два средневиковых воина стоят и один из них встал на колено для акколады"
-            class="post__image post__image-knight"
+            alt="пиксельный фургон стоит под ночным небом"
+            class="post__image filter-sepia-brightness"
             loading="lazy"
           />
           <div class="post__block-content">
-            <p class="post__block-content-text">
-              На первых этапах мы работали со страхами и сомнениями, которые
-              часто испытывают новички. Один из них — страх перед чистым листом.
-              Это, конечно же, намного сложнее, чем боязнь куска бумаги. Часто
-              за этим ощущением скрываются более глубокие вопросы: с чего
-              начать? а вдруг будет слишком сложно? что, если я не справлюсь?
+            <p class="post__text">
+              На первых этапах мы работали со страхами и сомнениями, которые часто испытывают новички. 
+              Один из них — страх перед чистым листом. Это, конечно же, намного сложнее, чем боязнь куска бумаги. 
+              Часто за этим ощущением скрываются более глубокие вопросы: с чего начать? а вдруг будет слишком сложно? 
+              что, если я не справлюсь?
             </p>
-            <p class="post__text-content-text">
-              С самого начала было нелегко. Сначала было лёгкое волнение, но
-              полное осознание пришло, когда началась первая практическая
-              работа. Я начал вовремя, но при написании каждой строки кода я в
-              первую очередь боролся с собой — в шаге от того, чтобы всё бросить
-              и остаться там, где я был, навсегда… Или там, где я представляю
-              себя через пять лет.
+            <p class="post__text">
+              Место для ваших воспоминаний о начале первого спринта.
             </p>
             <div class="animation-buttons">
-              <button type="button" class="card__icon-button" aria-label="Like">
-                <!-- для фокуса добавь black-border и свойство позишен фиксид чтобы не прыгал -->
+              <button type="button" class="card__icon-button" aria-label="Нравится">
                 <svg
                   class="like-icon"
                   xmlns="http://www.w3.org/2000/svg"
@@ -142,6 +136,7 @@
                   height="36"
                   fill="none"
                   viewBox="0 0 39 36"
+                  aria-hidden="true"
                 >
                   <g class="heart">
                     <path
@@ -167,42 +162,39 @@
                   />
                 </svg>
               </button>
-              <button type="button" class="card__like-button black-border">
-                <span class="button__text pixele-title">Like</span>
+              <button type="button" class="card__like-button button">
+                <span class="button__text">Like</span>
               </button>
             </div>
           </div>
-          <!-- loading="lazy" - для ленивой загрузки и ускорения гукрузки страницы -->
         </article>
-        <article class="post__artile black-border">
-          <h2 class="post__title title-bold">1 спринт: А если не получится?</h2>
-          <h3
-            class="pixele-title zakrivayuschiy-teg__html label-html label-html-boy-smoking"
+        <article class="black-border">
+          <h2 class="post__title title">
+            1 спринт: А если не получится?
+          </h2>
+          <p
+            class="image-label"
             aria-hidden="true"
           >
-            &lt;/Grātiās&gt;
-          </h3>
+            &lt;/HTML&gt;
+          </p>
           <img
             src="./images/guy-lights-a-cigarette-GIF.webp"
-            alt="аниме парень закуривает сигарету"
-            class="post__image post__image-boy-smoking"
+            alt="пиксельный фургон стоит под ночным небом"
+            class="post__image filter-saturate-grayscale"
             loading="lazy"
           />
           <div class="post__block-content">
-            <p class="post__block-content-text">
-              Первый проект — позади! Но это всё ещё самое начало пути. Радость
-              могла быстро померкнуть и смениться ожиданием провала. Или вы,
-              наоборот, могли вдохновиться успехами и поверить в себя.
+            <p class="post__text">
+              Первый проект — позади! Но это всё ещё самое начало пути. 
+              Радость могла быстро померкнуть и смениться ожиданием провала. 
+              Или вы, наоборот, могли вдохновиться успехами и поверить в себя.
             </p>
-            <p class="post__text-content-text">
-              Когда я закончил, то понял, что запомню именно этот сайт: если
-              поднять меня ночью, я расскажу всю его структуру. Отдельное
-              спасибо тем, кто давал мне теорию, проверял проекты и придумывал
-              задания для тренажёров. Если бы вы не подтолкнули меня, я бы не
-              написал этот текст сейчас.
+            <p class="post__text">
+              Место для ваших воспоминаний об окончании первого спринта.
             </p>
             <div class="animation-buttons">
-              <button type="button" class="card__icon-button" aria-label="Like">
+              <button type="button" class="card__icon-button" aria-label="Нравится">
                 <svg
                   class="like-icon"
                   xmlns="http://www.w3.org/2000/svg"
@@ -210,6 +202,7 @@
                   height="36"
                   fill="none"
                   viewBox="0 0 39 36"
+                  aria-hidden="true"
                 >
                   <g class="heart">
                     <path
@@ -235,41 +228,40 @@
                   />
                 </svg>
               </button>
-              <button type="button" class="card__like-button black-border">
-                <span class="button__text pixele-title">Like</span>
+              <button type="button" class="card__like-button button">
+                <span class="button__text">Like</span>
               </button>
             </div>
           </div>
         </article>
-        <article class="post__artile black-border">
-          <h2 class="post__title title-bold">2 спринт: Погоня за идеалом</h2>
-          <h3
-            class="pixele-title zakrivayuschiy-teg__html label-html label-html-coders"
+        <article class="black-border">
+          <h2 class="post__title title">
+            2 спринт: Погоня за идеалом
+          </h2>
+          <p
+            class="image-label"
             aria-hidden="true"
           >
-            &lt;/coders&gt;
-          </h3>
+            &lt;/HTML&gt;
+          </p>
           <img
             src="./images/happy-dance-GIF.webp"
-            alt="танец двех персонажей из аниме"
-            class="post__image post__image-coders"
+            alt="пиксельный фургон стоит под ночным небом"
+            class="post__image filter-hue-rotate-drop-shadow"
             loading="lazy"
           />
           <div class="post__block-content">
-            <p class="post__block-content-text">
-              На этом этапе вы уже достаточно разбирались в основах вёрстки,
-              чтобы понять, как много ещё впереди. Вы могли попытаться погнаться
-              за идеалом и понять, что он недостижим. А, может, вы вовсе и не
-              подвержены перфекционизму и вместо того, чтобы сделать идеально,
-              старались просто сделать.
+            <p class="post__text">
+              На этом этапе вы уже достаточно разбирались в основах вёрстки, чтобы понять, как много ещё впереди. 
+              Вы могли попытаться погнаться за идеалом и понять, что он недостижим. 
+              А, может, вы вовсе и не подвержены перфекционизму и 
+              вместо того, чтобы сделать идеально, старались просто сделать.
             </p>
-            <p class="post__text-content-text">
-              Понимая, что мне в таком темпе фигачить год, я не растерялся...
-              Позвал друга на курс бекенда и теперь мы получаем удовольствие и
-              плачем вместе.
+            <p class="post__text">
+              Место для ваших воспоминаний о начале второго спринта.
             </p>
             <div class="animation-buttons">
-              <button type="button" class="card__icon-button" aria-label="Like">
+              <button type="button" class="card__icon-button" aria-label="Нравится">
                 <svg
                   class="like-icon"
                   xmlns="http://www.w3.org/2000/svg"
@@ -277,6 +269,7 @@
                   height="36"
                   fill="none"
                   viewBox="0 0 39 36"
+                  aria-hidden="true"
                 >
                   <g class="heart">
                     <path
@@ -302,41 +295,40 @@
                   />
                 </svg>
               </button>
-              <button type="button" class="card__like-button black-border">
-                <span class="button__text pixele-title">Like</span>
+              <button type="button" class="card__like-button button">
+                <span class="button__text">Like</span>
               </button>
             </div>
           </div>
         </article>
-        <article class="post__artile black-border">
-          <h2 class="post__title title-bold">2 спринт: О тех, кто рядом</h2>
-          <h3
-            class="pixele-title zakrivayuschiy-teg__html label-html label-html-simpsons-hug"
+        <article class="black-border">
+          <h2 class="post__title title">
+            2 спринт: О тех, кто рядом
+          </h2>
+          <p
+            class="image-label"
             aria-hidden="true"
           >
-            &lt;/поддержка&gt;
-          </h3>
+            &lt;/HTML&gt;
+          </p>
           <img
             src="./images/Lisa-Simpson-Hug-GIF-by-The-Simpsons.webp"
-            alt="обнимающаяся семья симпсанов"
-            class="post__image post__image-simpsons-hug"
+            alt="пиксельный фургон стоит под ночным небом"
+            class="post__image filter-saturate-blur"
             loading="lazy"
           />
           <div class="post__block-content">
-            <p class="post__block-content-text">
-              Всё это время вы были не одиноки (хотя, возможно, иногда и
-              чувствовали, что одни против целого мира). Вас окружали
-              одногруппники, команда сопровождения и просто близкие люди,
-              которым можно пожаловаться, если очередной макет просто так не
-              поддавался. Осваивать что-то новое легче, когда рядом есть
-              единомышленники, не правда ли?
+            <p class="post__text">
+              Всё это время вы были не одиноки (хотя, возможно, иногда и чувствовали, что одни против целого мира). 
+              Вас окружали одногруппники, команда сопровождения и просто близкие люди, которым можно пожаловаться, 
+              если очередной макет просто так не поддавался. Осваивать что-то новое легче, когда рядом есть единомышленники, 
+              не правда ли?
             </p>
-            <p class="post__text-content-text">
-              Спасибо всем, кто поддерживал и готов был меня выслушать, когда я
-              хотел бросить(они знают кому адресован этот текст) P.S. Спасибо.
+            <p class="post__text">
+              Место для ваших воспоминаний об окончании второго спринта.
             </p>
             <div class="animation-buttons">
-              <button type="button" class="card__icon-button" aria-label="Like">
+              <button type="button" class="card__icon-button" aria-label="Нравится">
                 <svg
                   class="like-icon"
                   xmlns="http://www.w3.org/2000/svg"
@@ -344,6 +336,7 @@
                   height="36"
                   fill="none"
                   viewBox="0 0 39 36"
+                  aria-hidden="true"
                 >
                   <g class="heart">
                     <path
@@ -369,38 +362,39 @@
                   />
                 </svg>
               </button>
-              <button type="button" class="card__like-button black-border">
-                <span class="button__text pixele-title">Like</span>
+              <button type="button" class="card__like-button button">
+                <span class="button__text">Like</span>
               </button>
             </div>
           </div>
         </article>
-        <article class="post__artile black-border">
-          <h2 class="post__title title-bold">3 спринт: Обходные стратегии</h2>
-          <h3
-            class="pixele-title zakrivayuschiy-teg__html label-html label-html-boy-in-meadow"
+        <article class="black-border">
+          <h2 class="post__title title">
+            3 спринт: Обходные стратегии
+          </h2>
+          <p
+            class="image-label"
             aria-hidden="true"
           >
-            &lt;/прозрение&gt;
-          </h3>
+            &lt;/HTML&gt;
+          </p>
           <img
             src="./images/Wait-Waiting-GIF.webp"
-            alt="мужчина на поле смотрит на ромашки"
-            class="post__image post__image-boy-in-meadow"
+            alt="пиксельный фургон стоит под ночным небом"
+            class="post__image filter-opacity-contrast"
             loading="lazy"
           />
           <div class="post__block-content">
-            <p class="post__block-content-text">
-              На этом курсе вы постоянно решали разные задачи. В какой-то момент
-              вам могло показаться, что решения просто иссякли. Значит, пришло
-              время посмотреть на задачу под другим углом.
+            <p class="post__text">
+              На этом курсе вы постоянно решали разные задачи. 
+              В какой-то момент вам могло показаться, что решения просто иссякли. 
+              Значит, пришло время посмотреть на задачу под другим углом.
             </p>
-            <p class="post__text-content-text">
-              Пришла адаптация, а значит время решительных действий и сдача всех
-              проектов. Полюбить программирование, этоту тоже нужно научиться.
+            <p class="post__text">
+              Место для ваших воспоминаний о начале третьего спринта.
             </p>
             <div class="animation-buttons">
-              <button type="button" class="card__icon-button" aria-label="Like">
+              <button type="button" class="card__icon-button" aria-label="Нравится">
                 <svg
                   class="like-icon"
                   xmlns="http://www.w3.org/2000/svg"
@@ -408,6 +402,7 @@
                   height="36"
                   fill="none"
                   viewBox="0 0 39 36"
+                  aria-hidden="true"
                 >
                   <g class="heart">
                     <path
@@ -433,41 +428,40 @@
                   />
                 </svg>
               </button>
-              <button type="button" class="card__like-button black-border">
-                <span class="button__text pixele-title">Like</span>
+              <button type="button" class="card__like-button button">
+                <span class="button__text">Like</span>
               </button>
             </div>
           </div>
         </article>
-        <article class="post__artile black-border">
-          <h2 class="post__title title-bold">
+        <article class="black-border">
+          <h2 class="post__title title">
             3 спринт: Когда опускаются руки
           </h2>
-          <h3
-            class="pixele-title zakrivayuschiy-teg__html label-html label-html-river"
+          <p
+            class="image-label"
             aria-hidden="true"
           >
-            &lt;/relax&gt;
-          </h3>
+            &lt;/HTML&gt;
+          </p>
           <img
             src="./images/river.webp"
-            alt="река окутанная деревьями на берегу"
-            class="post__image post__image-river"
+            alt="пиксельный фургон стоит под ночным небом"
+            class="post__image filter-opacity-brightness"
             loading="lazy"
           />
           <div class="post__block-content">
-            <p class="post__block-content-text">
-              Во время учёбы часто возникает чувство, когда не знаешь, за что
-              хвататься. Вроде и проектную пора сдавать, и задачи хочется
-              порешать, и в теории получше разобраться, и жизнь не забыть
-              пожить. В такие моменты очень нужна концентрация. Вспомните,
-              откуда вы её черпали.
+            <p class="post__text">
+              Во время учёбы часто возникает чувство, когда не знаешь, за что хвататься. 
+              Вроде и проектную пора сдавать, и задачи хочется порешать, и в теории получше 
+              разобраться, и жизнь не забыть пожить. В такие моменты очень нужна концентрация. 
+              Вспомните, откуда вы её черпали.
             </p>
-            <p class="post__text-content-text">
-              Тишина и покой. Всегда помогали мне справиться со всем.
+            <p class="post__text">
+              Место для ваших воспоминаний об окончании третьего спринта.
             </p>
             <div class="animation-buttons">
-              <button type="button" class="card__icon-button" aria-label="Like">
+              <button type="button" class="card__icon-button" aria-label="Нравится">
                 <svg
                   class="like-icon"
                   xmlns="http://www.w3.org/2000/svg"
@@ -475,6 +469,7 @@
                   height="36"
                   fill="none"
                   viewBox="0 0 39 36"
+                  aria-hidden="true"
                 >
                   <g class="heart">
                     <path
@@ -500,40 +495,42 @@
                   />
                 </svg>
               </button>
-              <button type="button" class="card__like-button black-border">
-                <span class="button__text pixele-title">Like</span>
+              <button type="button" class="card__like-button button">
+                <span class="button__text">Like</span>
               </button>
             </div>
           </div>
         </article>
-        <article class="post__artile black-border">
-          <h2 class="post__title title-bold">«Сейчас я здесь»</h2>
-          <h3
-            class="pixele-title zakrivayuschiy-teg__html label-html label-html-thumbs-up"
+        <article class="black-border">
+          <h2 class="post__title title">
+            «Сейчас я здесь»
+          </h2>
+          <p
+            class="image-label"
             aria-hidden="true"
           >
-            &lt;/учеба&gt;
-          </h3>
+            &lt;/HTML&gt;
+          </p>
           <img
             src="./images/The-Simpsons-Ok-GIF-by-slicedbread.webp"
-            alt="мульташный парень показывает большой палец вверх"
-            class="post__image post__image-thumbs-up"
+            alt="пиксельный фургон стоит под ночным небом"
+            class="post__image filter-saturate"
             loading="lazy"
           />
           <div class="post__block-content">
-            <p class="post__block-content-text">
-              Сейчас вы уже очень много знаете о вёрстке. Но это только начало.
-              Во-первых, впереди ещё много материала про «красотищу». Во-вторых,
-              с окончанием курса учёба не заканчивается. Вёрстка — это целый
-              мир. И этот мир постоянно меняется. Познать его полностью не
-              получится, но это тот случай, когда важен сам процесс познания.
-              Ведь часто путь — и есть результат.
+            <p class="post__text">
+              Сейчас вы уже очень много знаете о вёрстке. Но это только начало. 
+              Во-первых, впереди ещё много материала про «красотищу». 
+              Во-вторых, с окончанием курса учёба не заканчивается. 
+              Вёрстка — это целый мир. И этот мир постоянно меняется. 
+              Познать его полностью не получится, но это тот случай, 
+              когда важен сам процесс познания. Ведь часто путь — и есть результат.
             </p>
-            <p class="post__text-content-text">
-              Только начало... Еще учиться... Готов к этому.
+            <p class="post__text">
+              Место, чтобы остановиться, подумать и написать, что вы чувствуете в этой точке пути.
             </p>
             <div class="animation-buttons">
-              <button type="button" class="card__icon-button" aria-label="Like">
+              <button type="button" class="card__icon-button" aria-label="Нравится">
                 <svg
                   class="like-icon"
                   xmlns="http://www.w3.org/2000/svg"
@@ -541,6 +538,7 @@
                   height="36"
                   fill="none"
                   viewBox="0 0 39 36"
+                  aria-hidden="true"
                 >
                   <g class="heart">
                     <path
@@ -566,19 +564,19 @@
                   />
                 </svg>
               </button>
-              <button type="button" class="card__like-button black-border">
-                <span class="button__text pixele-title">Like</span>
+              <button type="button" class="card__like-button button">
+                <span class="button__text">Like</span>
               </button>
             </div>
           </div>
         </article>
       </section>
     </main>
-    <footer class="footer">
+    <div class="save-section">
       <!-- Кнопка "Сохранить на память" -->
       <button
         type="button"
-        class="save-button black-border"
+        class="save-button button margin-top"
         id="open-dialog-button"
         onclick="window['dialog-id'].showModal()"
       >
@@ -591,9 +589,9 @@
         >
           <use href="./svg/icons.svg#floppy"></use>
         </svg>
-        <span class="button__text pixele-title">Сохранить на память</span>
+        <span class="button__text">Сохранить на память</span>
       </button>
-    </footer>
+    </div>
     <!-- Кнопка "ОК" (например, в модальном окне) -->
     <dialog class="dialog" id="dialog-id">
       <div class="dialog__content">
@@ -606,17 +604,17 @@
         >
           <use href="./svg/icons.svg#floppy"></use>
         </svg>
-        <h2 class="button__text pixele-title">
+        <p class="button__text">
           Вставьте дискету, чтобы продолжить
-        </h2>
+        </p>
       </div>
       <button
         type="button"
-        class="ok-button black-border"
+        class="ok-button button"
         id="close-dialog-button"
         onclick="window['dialog-id'].close()"
       >
-        <span class="button__text pixele-title">ОК</span>
+        <span class="button__text">ОК</span>
       </button>
     </dialog>
     <script src="./scripts/like.js"></script>
