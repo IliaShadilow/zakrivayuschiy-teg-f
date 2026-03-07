@@ -101,7 +101,7 @@
 .post__image {
   display: block; /* Убирает лишние пробелы под изображением */
   object-fit: cover; /* Аналогично background-size: cover */
-  object-position: center; /* Аналогично background-position: center */ 
+  object-position: center; /* Аналогично background-position: center */
   background: var(--bg-post__image, #000);
   inline-size: 100%;
   aspect-ratio: 1 / 1; /* квадратное */
@@ -216,6 +216,7 @@
 }
 
 /* Анимация заполнения для всех кнопок с текстом */
+
 .button::after {
   content: '';
   position: absolute;
@@ -235,6 +236,7 @@
 }
 
 /* Стили для текста внутри кнопок */
+
 .button__text {
   position: relative;
   z-index: 1;
@@ -249,7 +251,7 @@
   transition: border-color 0.3s ease; /* плавность при изменении цвета */
 }
 
-.card__icon-button:focus-visible { 
+.card__icon-button:focus-visible {
   border: 2px solid var(--border-button-focus, rgb(0 0 0 / 1));
 }
 
@@ -293,15 +295,13 @@
 .like-icon:hover .core {
   fill: var(--core-color, #000);
   /* так это выглядит Для стилизации вам понадобится отслеживать наведение на основной обёртке (.like-icon), а после — выбирать нужный элемент. */
-  transition:
-    fill 0.3s linear;
+  transition: fill 0.3s linear;
 }
 
 .like-icon:active .core {
   fill: var(--animation-fill-color-core, red);
   /* так это выглядит Для стилизации вам понадобится отслеживать наведение на основной обёртке (.like-icon), а после — выбирать нужный элемент. */
-  transition:
-    fill 0.3s linear;
+  transition: fill 0.3s linear;
 }
 
 /* contour — контур */
@@ -313,22 +313,19 @@
 /* main-body — основное тело сердца; */
 
 .main-body {
-  fill: transparent; 
-  transition:
-    fill 0.3s linear;
+  fill: transparent;
+  transition: fill 0.3s linear;
 }
 
 .like-icon:hover .main-body {
   fill: var(--main-body-color, #000);
   /* так это выглядит Для стилизации вам понадобится отслеживать наведение на основной обёртке (.like-icon), а после — выбирать нужный элемент. */
-  transition:
-    fill 0.3s linear 0.05s;
+  transition: fill 0.3s linear 0.05s;
 }
 
 .like-icon:active .main-body {
   fill: var(--animation-fill-color-core, red);
-  transition:
-    fill 0.3s linear 0.05s;
+  transition: fill 0.3s linear 0.05s;
 }
 
 /* sparks — искры вокруг */
@@ -351,8 +348,8 @@
 /* dialog */
 
 .dialog {
-  position: fixed; 
-  inset: 0; 
+  position: fixed;
+  inset: 0;
   display: flex;
   flex-direction: column;
   place-items: center;
@@ -412,8 +409,7 @@ body:has(dialog[open]) {
 }
 
 .accent-font {
-  font-family:
-    var(--accent-font, 'Press Start 2P'), sans-serif;
+  font-family: var(--accent-font, 'Press Start 2P'), sans-serif;
 }
 
 .closing_tag__html {
@@ -440,7 +436,11 @@ body:has(dialog[open]) {
 
 /* прогрессивное улучшение */
 
-@supports ((text-stroke: 1px var(--text-stroke-color, #fff)) or (-webkit-text-stroke: 1px var(--text-stroke-color, #fff))) {
+@supports (
+  (text-stroke: 1px var(--text-stroke-color, #fff)) or
+    (-webkit-text-stroke: 1px var(--text-stroke-color, #fff))
+) {
+
   .image-label {
     color: initial; /* Возвращаем обычный цвет текста */
     text-shadow: none; /* Убираем тень */
@@ -452,6 +452,7 @@ body:has(dialog[open]) {
 /* адаптив */
 
 @media (width >= 1024px) {
+
   .save-button {
     flex-direction: initial;
   }
@@ -461,11 +462,4 @@ body:has(dialog[open]) {
     height: 21px;
     fill: var(--loppy-fill-white, #fff);
   }
-
-  /* position's labels and filters img */
-
-  /* .image-label {
-    margin-inline-start: 83%;
-    margin-block-start: 3%;
-  } */
 }
