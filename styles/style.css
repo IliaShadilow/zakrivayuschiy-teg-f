@@ -103,9 +103,9 @@
   object-fit: cover; /* Аналогично background-size: cover */
   object-position: center; /* Аналогично background-position: center */
   background: var(--bg-post__image, #000);
+  transform: translateY(2px);
   inline-size: 100%;
   aspect-ratio: 1 / 1; /* квадратное */
-  transform: translateY(2px);
 }
 
 /* filters img */
@@ -149,13 +149,13 @@
 
 .image-label {
   position: absolute;
-  z-index: 20;
-  display: block;
   top: 55px;
   right: 23px;
-  font-size: var(--font-size-label, 14px);
-  font-family: var(--accent-font, 'Press Start 2P'), sans-serif;
+  z-index: 20;
+  display: block;
   opacity: 0.5;
+  font-family: var(--accent-font, 'Press Start 2P'), sans-serif;
+  font-size: var(--font-size-label, 14px);
   text-shadow: 0 0 1px var(--text-stroke-color, #fff); /* Запасной вариант - тень */
   mix-blend-mode: hard-light; /* Режим смешивания */
   white-space: nowrap;
@@ -167,18 +167,18 @@
   display: flex;
   justify-content: end;
   align-items: center;
-  gap: 7px; 
+  gap: 7px;
   margin-block-end: 1%;
 }
 
 .card__like-button {
-  width: 130px;
-  height: 38px; 
-  margin-block: 0; 
-  padding: 0; 
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  width: 130px;
+  height: 38px;
+  margin-block: 0;
+  padding: 0;
 }
 
 .save-button {
@@ -209,8 +209,8 @@
   z-index: 1;
   border: 2px solid var(--black-border, #000);
   background: #fff;
-  cursor: pointer;
   transition: box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
 .button:focus-visible {
@@ -243,26 +243,26 @@
   position: relative;
   z-index: 1;
   color: var(--button-text-mix, #fff);
-  font-size: var(--font-size-button__text, 14px);
   font-family: var(--accent-font, 'Press Start 2P'), sans-serif;
+  font-size: var(--font-size-button__text, 14px);
   mix-blend-mode: difference;
 }
 
 .card__icon-button {
-  border: 2px solid transparent;
-  transition: border-color 0.3s ease;
-  display: flex; 
-  align-items: center;
+  display: flex;
   justify-content: center;
-  padding: 0; 
-  height: 38px; 
-  width: 42px; 
+  align-items: center;
+  width: 42px;
+  height: 38px;
+  border: 2px solid transparent;
+  padding: 0;
+  transition: border-color 0.3s ease;
 }
 
 .like-icon {
-  display: block; 
-  width: 39px; 
-  height: 36px; 
+  display: block;
+  width: 39px;
+  height: 36px;
 }
 
 .card__icon-button:focus-visible {
@@ -384,10 +384,10 @@
 }
 
 .dialog__text {
-  font-size: var(--font-size-button__text, 14px);
-  font-family: var(--accent-font, 'Press Start 2P'), sans-serif;
-  line-height: 1.5;
   color: var(--black-border, #000);
+  font-family: var(--accent-font, 'Press Start 2P'), sans-serif;
+  font-size: var(--font-size-button__text, 14px);
+  line-height: 1.5;
   text-transform: uppercase;
 }
 
@@ -412,8 +412,8 @@ body:has(dialog[open]) {
 
 .dialog__content {
   display: flex;
-  gap: 19px;
   align-items: center;
+  gap: 19px;
 }
 
 .dialog .button__text {
@@ -486,8 +486,8 @@ body:has(dialog[open]) {
 
   .post__block-content {
     gap: 24px;
-    margin-block-start: var(--margin-post__block-content-1440, 4.6%);
     margin-inline: var(--margin-post__block-content-1440-inine, 4%);
+    margin-block-start: var(--margin-post__block-content-1440, 4.6%);
   }
 
   .closing_tag {
@@ -506,8 +506,8 @@ body:has(dialog[open]) {
   }
 
   .animation-buttons {
-    margin-block-end: -2%;
     margin-inline-end: -1%;
+    margin-block-end: -2%;
   }
 
   .margin-top {
